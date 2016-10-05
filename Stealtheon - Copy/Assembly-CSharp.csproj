@@ -45,16 +45,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\AI\EnemyLook.cs" />
+     <Compile Include="Assets\Scripts\AI\EnemyMove.cs" />
+     <Compile Include="Assets\Scripts\AI\FollowScript.cs" />
+     <Compile Include="Assets\Scripts\Abstracts\Character.cs" />
+     <Compile Include="Assets\Scripts\Abstracts\Information.cs" />
      <Compile Include="Assets\Scripts\Actor\Actor2D.cs" />
      <Compile Include="Assets\Scripts\Actor\ActorBehaviour.cs" />
      <Compile Include="Assets\Scripts\Actor\ActorMovement.cs" />
-     <Compile Include="Assets\Scripts\AuthorAttribute.cs" />
+     <Compile Include="Assets\Scripts\Attributes\AuthorAttribute.cs" />
      <Compile Include="Assets\Scripts\Background.cs" />
-     <Compile Include="Assets\Scripts\Character.cs" />
-     <Compile Include="Assets\Scripts\Enemy\EnemyLook.cs" />
-     <Compile Include="Assets\Scripts\Enemy\EnemyMove.cs" />
-     <Compile Include="Assets\Scripts\FollowScript.cs" />
-     <Compile Include="Assets\Scripts\Information.cs" />
      <Compile Include="Assets\Scripts\Key.cs" />
      <Compile Include="Assets\Scripts\MirrorPuzzle.cs" />
      <Compile Include="Assets\Scripts\Monochrome.cs" />

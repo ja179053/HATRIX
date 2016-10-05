@@ -4,13 +4,14 @@ public class ActorBehaviour : MonoBehaviour
 {
 	
 	public Transform cages;
-	public GameObject metamorphis;
+	static GameObject metamorphis;
 	ActorMovement move;
 	bool preteleoprt;
 	//Initialises character settings
 	void Start ()
 	{
 		move = GetComponentInChildren<ActorMovement> ();
+		metamorphis = GameObject.Find ("Metamorphis box");
 	}
 
 	// Moves the actor and raycasts to determine if finish has been accessed.
@@ -22,6 +23,7 @@ public class ActorBehaviour : MonoBehaviour
 		} else if (Input.GetKeyDown (KeyCode.Space)) {
 			//	GetComponent<Animation> ().Play ();
 		} else if (Input.GetKeyDown (KeyCode.A)) {
+			preteleoprt = !preteleoprt;
 			if (preteleoprt) {
 				metamorphis.transform.position = transform.position;
 			} else {
