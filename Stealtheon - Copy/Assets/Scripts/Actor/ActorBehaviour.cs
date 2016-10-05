@@ -9,11 +9,13 @@ public class ActorBehaviour : MonoBehaviour
 	static GameObject metamorphis;
 	ActorMovement move;
 	bool preteleoprt;
+	GameManager gm;
 	//Initialises character settings
 	void Start ()
 	{
 		ps = GetComponentInChildren<ParticleSystem> ();
 		move = GetComponentInChildren<ActorMovement> ();
+		gm = FindObjectOfType<GameManager> ();
 		metamorphis = GameObject.Find ("Metamorphis box");
 		StartCoroutine (ActivateSmoke ());
 	}
@@ -40,8 +42,9 @@ public class ActorBehaviour : MonoBehaviour
 				transform.position = metamorphis.transform.position;
 			}
 		} else if (Input.GetKeyDown (KeyCode.Escape)) {
-			Debug.Break();
-			Application.Quit ();
+			gm.Quit ();
+		} else if (Input.GetKeyDown (KeyCode.P)) {
+			GameManager.Paused = !GameManager.Paused;
 		}
 	}
 
