@@ -1,17 +1,26 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class ActorBehaviour : MonoBehaviour
 {
 	
 	public Transform cages;
+	ParticleSystem ps;
 	static GameObject metamorphis;
 	ActorMovement move;
 	bool preteleoprt;
 	//Initialises character settings
 	void Start ()
 	{
+		ps = GetComponentInChildren<ParticleSystem> ();
 		move = GetComponentInChildren<ActorMovement> ();
 		metamorphis = GameObject.Find ("Metamorphis box");
+		StartCoroutine (ActivateSmoke ());
+	}
+	IEnumerator ActivateSmoke(){
+		ps.Play ();
+		yield return new WaitForSeconds (2);
+		ps.Stop ();
 	}
 
 	// Moves the actor and raycasts to determine if finish has been accessed.
@@ -24,11 +33,15 @@ public class ActorBehaviour : MonoBehaviour
 			//	GetComponent<Animation> ().Play ();
 		} else if (Input.GetKeyDown (KeyCode.A)) {
 			preteleoprt = !preteleoprt;
+			StartCoroutine (ActivateSmoke ());
 			if (preteleoprt) {
 				metamorphis.transform.position = transform.position;
 			} else {
 				transform.position = metamorphis.transform.position;
 			}
+		} else if (Input.GetKeyDown (KeyCode.Escape)) {
+			Debug.Break();
+			Application.Quit ();
 		}
 	}
 
