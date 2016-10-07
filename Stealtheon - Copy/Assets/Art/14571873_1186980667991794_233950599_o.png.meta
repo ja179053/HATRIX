@@ -1,0 +1,205 @@
+fileFormatVersion: 2
+guid: 12a43ac5654e3c948ab93f6bb64a4d0e
+timeCreated: 1475844980
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: 14571873_1186980667991794_233950599_o_0
+    21300002: 14571873_1186980667991794_233950599_o_1
+    21300004: 14571873_1186980667991794_233950599_o_2
+    21300006: 14571873_1186980667991794_233950599_o_3
+    21300008: 14571873_1186980667991794_233950599_o_4
+    21300010: 14571873_1186980667991794_233950599_o_5
+    21300012: 14571873_1186980667991794_233950599_o_6
+    21300014: 14571873_1186980667991794_233950599_o_7
+    21300016: 14571873_1186980667991794_233950599_o_8
+    21300018: 14571873_1186980667991794_233950599_o_9
+    21300020: 14571873_1186980667991794_233950599_o_10
+    21300022: 14571873_1186980667991794_233950599_o_11
+    21300024: 14571873_1186980667991794_233950599_o_12
+    21300026: 14571873_1186980667991794_233950599_o_13
+    21300028: 14571873_1186980667991794_233950599_o_14
+    21300030: 14571873_1186980667991794_233950599_o_15
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 14571873_1186980667991794_233950599_o_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1618
+        width: 430
+        height: 430
+      alignment: 9
+      pivot: {x: 100, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 14571873_1186980667991794_233950599_o_1
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 1618
+        width: 430
+        height: 430
+      alignment: 9
+      pivot: {x: 100, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 14571873_1186980667991794_233950599_o_2
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 1618
+        width: 430
+        height: 430
+      alignment: 9
+      pivot: {x: 100, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 14571873_1186980667991794_233950599_o_3
+      rect:
+        serializedVersion: 2
+        x: 1290
+        y: 1615
+        width: 430
+        height: 430
+      alignment: 9
+      pivot: {x: 100, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 14571873_1186980667991794_233950599_o_4
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1217
+        width: 430
+        height: 430
+      alignment: 9
+      pivot: {x: 100, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 14571873_1186980667991794_233950599_o_5
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 1191
+        width: 430
+        height: 430
+      alignment: 9
+      pivot: {x: 100, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 14571873_1186980667991794_233950599_o_6
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 1188
+        width: 430
+        height: 430
+      alignment: 9
+      pivot: {x: 100, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 14571873_1186980667991794_233950599_o_7
+      rect:
+        serializedVersion: 2
+        x: 1328
+        y: 1197
+        width: 430
+        height: 430
+      alignment: 9
+      pivot: {x: 100, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 14571873_1186980667991794_233950599_o_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 761
+        width: 430
+        height: 430
+      alignment: 9
+      pivot: {x: 100, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 14571873_1186980667991794_233950599_o_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 328
+        width: 430
+        height: 430
+      alignment: 9
+      pivot: {x: 100, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
