@@ -76,15 +76,15 @@ public class ActorMovement : Character
 	}
 
 	public void Teleport(Vector3 v){
-		canInput = false;
+	//	canInput = false;
 		if (transform.position != v) {	
 			if (nma != null) {
-				nma.SetDestination (v);
+				nma.Warp (v);
 			} else {		
 				transform.position = v;
 			}
 		} else {
-			canInput = true;
+	//		canInput = true;
 		}
 	}
 	public void InputMoveType(int i = 4){

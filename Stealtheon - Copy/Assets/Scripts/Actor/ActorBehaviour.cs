@@ -10,6 +10,7 @@ public class ActorBehaviour : MonoBehaviour
 	ActorMovement move;
 	bool preteleoprt;
 	GameManager gm;
+	public float smokeDuration = 2;
 	//Initialises character settings
 	void Start ()
 	{
@@ -21,7 +22,7 @@ public class ActorBehaviour : MonoBehaviour
 	}
 	IEnumerator ActivateSmoke(){
 		ps.Play ();
-		yield return new WaitForSeconds (2);
+		yield return new WaitForSeconds (smokeDuration);
 		ps.Stop ();
 	}
 
@@ -39,7 +40,7 @@ public class ActorBehaviour : MonoBehaviour
 			if (preteleoprt) {
 				metamorphis.transform.position = transform.position;
 			} else {
-				transform.position = metamorphis.transform.position;
+				move.Teleport (metamorphis.transform.position);
 			}
 		} else if (Input.GetKeyDown (KeyCode.Escape)) {
 			gm.Quit ();
