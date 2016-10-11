@@ -55,7 +55,7 @@ public class ActorBehaviour : MonoBehaviour
 	{
 		if (c.gameObject.tag == "Locked Door" && gotKey) {
 			c.collider.enabled = false;
-			Debug.Log ("unlocked");
+			move.Teleport (c.transform.parent.transform.position);
 		} else if (c.gameObject.tag == "Key") {
 			Destroy (c.gameObject);
 			gotKey = true;

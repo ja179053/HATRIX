@@ -56,9 +56,11 @@ public class FollowScript : MonoBehaviour
 		int j = 0;
 		for (int i = 0; i < zeroTransform.Length; i++) {
 			if (zeroTransform.Length > 1) {
-				if (Vector3.Distance (myPos.position, closest.position) > (10 + Vector3.Distance (myPos.position, zeroTransform [i].position))) {
-					closest = zeroTransform [i];
-					j = i;
+				if (zeroTransform [i].gameObject.activeInHierarchy) {
+					if (Vector3.Distance (myPos.position, closest.position) > (10 + Vector3.Distance (myPos.position, zeroTransform [i].position))) {
+						closest = zeroTransform [i];
+						j = i;
+					}
 				}
 			}
 		}

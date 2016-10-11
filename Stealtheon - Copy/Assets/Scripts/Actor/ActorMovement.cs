@@ -17,6 +17,9 @@ public class ActorMovement : Character
 		get{
 			return movementType;
 		} set {
+			while (value > 4) {
+				value -= 4;
+			}
 			if (value < 0) {
 				value = 3;
 			} else if (value > 3) {
