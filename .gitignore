@@ -217,3 +217,5 @@ Library*
 Temp*
 *.userprefs
 Stealtheon - Copy/Builds/PC build_Data/output_log.txt
+Stealtheon - Copy/Stealtheon - Copy.CSharp.csproj
+*.sln
