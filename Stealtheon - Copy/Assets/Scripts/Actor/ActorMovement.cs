@@ -4,6 +4,7 @@ public class ActorMovement : Character
 {
 	CharacterController chCo;
 	public bool grounded;
+	public bool move2DOnly;
 	//Initialises character settings
 	void Start ()
 	{
@@ -36,7 +37,10 @@ public class ActorMovement : Character
 		MovementType += (int)Input.GetAxis ("Mouse ScrollWheel");
 		//InputMoveType ();
 		float h = (int)Input.GetAxis ("Horizontal") * moveSpeed;
-		float v = (int)Input.GetAxis ("Vertical") * moveSpeed;
+		float v = 0;
+		if (!move2DOnly) {
+			v = (int)Input.GetAxis ("Vertical") * moveSpeed;
+		}
 	//	Debug.Log (v + " " + h);
 		Vector3 newPos = Vector3.zero;
 	//	if (h > 0.2f || v > 0.2f) {

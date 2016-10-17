@@ -31,7 +31,7 @@ public class ActorBehaviour : MonoBehaviour
 	void Update ()
 	{
 		if (Input.GetKeyDown (KeyCode.L)) {
-			CageSwitch ();		
+		//	CageSwitch ();		
 		} else if (Input.GetKeyDown (KeyCode.Space)) {
 			//	GetComponent<Animation> ().Play ();
 		} else if (Input.GetKeyDown (KeyCode.A)) {
