@@ -18,7 +18,9 @@ public class ActorBehaviour : MonoBehaviour
 		move = GetComponentInChildren<ActorMovement> ();
 		gm = FindObjectOfType<GameManager> ();
 		metamorphis = GameObject.Find ("Metamorphis box");
-		StartCoroutine (ActivateSmoke ());
+		if (ps != null) {
+			StartCoroutine (ActivateSmoke ());
+		}
 	}
 	IEnumerator ActivateSmoke(){
 		ps.Play ();
