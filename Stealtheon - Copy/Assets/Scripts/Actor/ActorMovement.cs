@@ -36,10 +36,10 @@ public class ActorMovement : Character
 	{
 		MovementType += (int)Input.GetAxis ("Mouse ScrollWheel");
 		//InputMoveType ();
-		float h = (int)Input.GetAxis ("Horizontal") * moveSpeed;
+		float h = Input.GetAxis ("Horizontal") * moveSpeed;
 		float v = 0;
 		if (!move2DOnly) {
-			v = (int)Input.GetAxis ("Vertical") * moveSpeed;
+			v = Input.GetAxis ("Vertical") * moveSpeed;
 		}
 	//	Debug.Log (v + " " + h);
 		Vector3 newPos = Vector3.zero;
