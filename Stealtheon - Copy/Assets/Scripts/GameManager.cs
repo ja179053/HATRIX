@@ -3,9 +3,11 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
-	public static bool paused;
+	public static bool paused, options;
 	static Canvas pauseScreen;
 	static AudioSource[] sounds;
+	static Button[] defaultButtons;
+	public GameObject optionsMenu;
 	public static bool Paused{
 		get{
 			return paused;
@@ -16,6 +18,7 @@ public class GameManager : MonoBehaviour {
 					aso.Pause ();
 				}
 				Time.timeScale = 0;
+				UpdateIcon ();
 			} else {
 				foreach (AudioSource aso in sounds) {
 					aso.UnPause (); 
@@ -28,6 +31,7 @@ public class GameManager : MonoBehaviour {
 	void Start(){
 		pauseScreen = FindObjectOfType<Canvas> ();
 		sounds = FindObjectsOfType<AudioSource> ();
+		defaultButtons = FindObjectsOfType<Button> ();
 		pauseScreen.enabled = false;
 	}
 	public void Resume(){
@@ -36,5 +40,17 @@ public class GameManager : MonoBehaviour {
 	public void Quit(){
 		Debug.Break ();
 		Application.Quit ();
+	}
+	public void Options(){
+		foreach (Button b in defaultButtons) {
+			b.gameObject.SetActive (optionsMenu.activeSelf);
+		}
+		optionsMenu.SetActive (!optionsMenu.activeSelf);
+	}
+	static Button[] activeButtons;
+	public Image icon;
+	static void UpdateIcon(){
+		activeButtons = FindObjectsOfType<Button> ();
+		//icon.rectTransform = activeButtons[0].
 	}
 }

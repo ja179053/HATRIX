@@ -45,8 +45,6 @@ public class ActorBehaviour : MonoBehaviour
 				move.Teleport (metamorphis.transform.position);
 			}
 		} else if (Input.GetKeyDown (KeyCode.Escape)) {
-			gm.Quit ();
-		} else if (Input.GetKeyDown (KeyCode.P)) {
 			GameManager.Paused = !GameManager.Paused;
 		}
 	}
@@ -61,8 +59,6 @@ public class ActorBehaviour : MonoBehaviour
 		} else if (c.gameObject.tag == "Key") {
 			Destroy (c.gameObject);
 			gotKey = true;
-		} else if (c.gameObject.tag == "Cage switch") {
-			CageSwitch ();
 		} 
 	}
 
@@ -78,7 +74,9 @@ public class ActorBehaviour : MonoBehaviour
 			}*/
 		} else if (!ActorMovement.canInput && c.gameObject.tag == "Teletarget") {		
 			ActorMovement.canInput = true;
-		}
+		}else if (c.gameObject.tag == "Cage switch") {
+			CageSwitch ();
+		} 
 	}
 
 	void CageSwitch ()
@@ -87,7 +85,7 @@ public class ActorBehaviour : MonoBehaviour
 			cages = GameObject.Find ("Cages").transform;
 		}
 		Information.conveyorDirection *= -1;
-		cages.position = new Vector3 (cages.position.x, 19, cages.position.z);	
+		cages.position += (Vector3.up * 17);
 	}
 }
 
