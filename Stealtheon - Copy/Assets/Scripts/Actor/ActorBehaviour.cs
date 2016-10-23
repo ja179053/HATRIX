@@ -53,10 +53,7 @@ public class ActorBehaviour : MonoBehaviour
 
 	void OnCollisionEnter (Collision c)
 	{
-		if (c.gameObject.tag == "Locked Door" && gotKey) {
-			c.collider.enabled = false;
-			move.Teleport (c.transform.parent.transform.position);
-		} else if (c.gameObject.tag == "Key") {
+		if (c.gameObject.tag == "Key") {
 			Destroy (c.gameObject);
 			gotKey = true;
 		} 
@@ -74,9 +71,12 @@ public class ActorBehaviour : MonoBehaviour
 			}*/
 		} else if (!ActorMovement.canInput && c.gameObject.tag == "Teletarget") {		
 			ActorMovement.canInput = true;
-		}else if (c.gameObject.tag == "Cage switch") {
+		} else if (c.gameObject.tag == "Cage switch") {
 			CageSwitch ();
-		} 
+		} else if (c.gameObject.tag == "Locked Door" && gotKey) {
+			c.enabled = false;
+			move.Teleport (c.transform.parent.transform.position);
+		}
 	}
 
 	void CageSwitch ()
