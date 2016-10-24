@@ -10,6 +10,7 @@ public class FollowScript : MonoBehaviour
 	public float cameraSpeed = 1;
 	public Vector3 extra;
 	NavMeshAgent nma;
+	public bool x = true, y = true, z = true;
 
 	void Start ()
 	{
@@ -38,7 +39,22 @@ public class FollowScript : MonoBehaviour
 			myPos = transform;
 		}
 		if (nma == null) {
-			transform.position = Vector3.Lerp (transform.position, targets [ClosestTarget (targets)].position + extra, Time.fixedDeltaTime * cameraSpeed);
+			Vector3 newTarget;
+			if (targets.Length > 0) {
+				newTarget = targets [ClosestTarget (targets)].position;
+			} else {
+				newTarget = actor.position;
+			}
+			if (!x) {
+				newTarget.x = transform.position.x;
+			}
+			if (!y) {
+				newTarget.y = transform.position.y;
+			}
+			if (!z) {
+				newTarget.z = transform.position.z;
+			}
+			transform.position = Vector3.Lerp (transform.position, newTarget + extra, Time.fixedDeltaTime * cameraSpeed);
 		} else {
 			nma.SetDestination (myPos.position + extra);
 		}
