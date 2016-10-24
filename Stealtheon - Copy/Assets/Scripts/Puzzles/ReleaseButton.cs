@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[AuthorAttribute ("JJ", TeamRole.Programmer)]
 public class ReleaseButton : MonoBehaviour {
 	public Rigidbody r;
 	// Use this for initialization

@@ -1,16 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[AuthorAttribute ("JJ", TeamRole.Programmer)]
 public class MirrorPuzzle : Puzzle {
 	public GameObject mirrorA, mirrorB;
 	public float allowance = 0.2f;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
 	void Update () {
 		bool mirrorX = (mirrorA.transform.localPosition.x < -mirrorB.transform.localPosition.x + allowance && mirrorA.transform.transform.localPosition.x > mirrorB.transform.localPosition.x - allowance) ? true : false;
 		bool mirrorY = (mirrorA.transform.localPosition.y == mirrorB.transform.localPosition.y) ? true : false;

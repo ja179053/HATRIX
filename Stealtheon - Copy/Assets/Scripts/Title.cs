@@ -2,6 +2,7 @@
 using UnityEngine.SceneManagement;
 using System.Collections;
 
+[AuthorAttribute ("JJ", TeamRole.Programmer)]
 public class Title : MonoBehaviour {
 
 	// Use this for initialization

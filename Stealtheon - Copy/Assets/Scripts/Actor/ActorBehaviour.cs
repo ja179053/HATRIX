@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[AuthorAttribute ("JJ", TeamRole.Programmer)]
 public class ActorBehaviour : MonoBehaviour
 {
 	
@@ -9,14 +10,12 @@ public class ActorBehaviour : MonoBehaviour
 	static GameObject metamorphis;
 	ActorMovement move;
 	bool preteleoprt;
-	GameManager gm;
 	public float smokeDuration = 2;
 	//Initialises character settings
 	void Start ()
 	{
 		ps = GetComponentInChildren<ParticleSystem> ();
 		move = GetComponentInChildren<ActorMovement> ();
-		gm = FindObjectOfType<GameManager> ();
 		metamorphis = GameObject.Find ("Metamorphis box");
 		if (ps != null) {
 			StartCoroutine (ActivateSmoke ());

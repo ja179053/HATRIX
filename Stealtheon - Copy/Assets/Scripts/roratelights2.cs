@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-[Author ("Zac Desogner")]
+[Author ("Zac", TeamRole.Designer)]
 public class roratelights2 : MonoBehaviour {
 
     public float speed = 1f;

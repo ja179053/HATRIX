@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+[AuthorAttribute ("JJ", TeamRole.Programmer)]
 //FollowScript is used to follow a target. A target to look at can be assigned too.
 public class FollowScript : MonoBehaviour
 {
@@ -69,10 +69,10 @@ public class FollowScript : MonoBehaviour
 		}
 		return j;
 	}
-	Renderer render;
+/*	Renderer render;
 	void OnTriggerEnter(Collider c){
 		if (c.gameObject.tag == "Teleporter") {
 			render.enabled = !render.enabled;
 		}
-	}
+	}*/
 }

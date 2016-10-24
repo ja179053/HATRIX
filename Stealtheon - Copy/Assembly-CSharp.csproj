@@ -51,14 +51,14 @@
      <Compile Include="Assets\Scripts\Abstracts\Character.cs" />
      <Compile Include="Assets\Scripts\Abstracts\Information.cs" />
      <Compile Include="Assets\Scripts\Abstracts\Puzzle.cs" />
-     <Compile Include="Assets\Scripts\Actor\Actor2D.cs" />
      <Compile Include="Assets\Scripts\Actor\ActorBehaviour.cs" />
      <Compile Include="Assets\Scripts\Actor\ActorMovement.cs" />
      <Compile Include="Assets\Scripts\Attributes\AuthorAttribute.cs" />
      <Compile Include="Assets\Scripts\Background.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
-     <Compile Include="Assets\Scripts\Puzzles\Key.cs" />
+     <Compile Include="Assets\Scripts\NextLevelTrigger.cs" />
      <Compile Include="Assets\Scripts\Puzzles\MirrorPuzzle.cs" />
+     <Compile Include="Assets\Scripts\Puzzles\MoveOnConveyor.cs" />
      <Compile Include="Assets\Scripts\Puzzles\ReleaseButton.cs" />
      <Compile Include="Assets\Scripts\Shaders\MirrorEffect.cs" />
      <Compile Include="Assets\Scripts\Shaders\Monochrome.cs" />

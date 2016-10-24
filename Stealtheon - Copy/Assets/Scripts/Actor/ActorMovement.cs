@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+[AuthorAttribute ("JJ", TeamRole.Programmer)]
 public class ActorMovement : Character
 {
 	CharacterController chCo;
@@ -36,10 +37,10 @@ public class ActorMovement : Character
 	{
 		MovementType += (int)Input.GetAxis ("Mouse ScrollWheel");
 		//InputMoveType ();
-		float h = Input.GetAxis ("Horizontal") * moveSpeed;
+		float h = Input.GetAxis ("Horizontal");
 		float v = 0;
 		if (!move2DOnly) {
-			v = Input.GetAxis ("Vertical") * moveSpeed;
+			v = Input.GetAxis ("Vertical");
 		}
 	//	Debug.Log (v + " " + h);
 		Vector3 newPos = Vector3.zero;
@@ -63,9 +64,11 @@ public class ActorMovement : Character
 		CheckGround ();
 		//	Debug.Log (MovementType);
 		if (nma != null) {
-			newPos += transform.position;
 			if (newPos != transform.position) {
-				nma.SetDestination (newPos);
+				nma.SetDestination ((newPos *0.5f)+transform.position);
+				if (nma.speed != moveSpeed) {
+					SetNMASpeed (moveSpeed);
+				}
 			}
 		} else if (grounded) {
 			chCo.Move (newPos * Time.deltaTime);

@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
+[AuthorAttribute ("JJ", TeamRole.Programmer)]
 public class GameManager : MonoBehaviour {
 	public static bool paused, options;
 	static Canvas pauseScreen;
@@ -33,9 +34,17 @@ public class GameManager : MonoBehaviour {
 		sounds = FindObjectsOfType<AudioSource> ();
 		defaultButtons = FindObjectsOfType<Button> ();
 		pauseScreen.enabled = false;
+		Information.conveyorDirection = -1;
 	}
 	public void Resume(){
 		Paused = false;
+	}
+	public static void NewLevel(bool nextLevel = true){
+		if (nextLevel) {
+			SceneManager.LoadScene (sceneBuildIndex: +1);
+		}else {
+			SceneManager.LoadScene (0);
+		}
 	}
 	public void Quit(){
 		Debug.Break ();

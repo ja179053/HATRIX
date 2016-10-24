@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[AuthorAttribute ("JJ", TeamRole.Programmer)]
 public class Background : MonoBehaviour {
 	public int length = 1;
 	public float blockWidth = 1;
@@ -9,7 +10,7 @@ public class Background : MonoBehaviour {
 	void Start () {
 		float i = 0;
 		while (i < length) {
-			int cubeSize = (int)Random.Range (1, blockWidth);
+		//	int cubeSize = (int)Random.Range (1, blockWidth);
 			GameObject g = GameObject.CreatePrimitive (PrimitiveType.Cube);
 			g.GetComponent<Renderer> ().material = m;
 			float blockHeight = blockWidth * Random.Range(1,3) / 2;

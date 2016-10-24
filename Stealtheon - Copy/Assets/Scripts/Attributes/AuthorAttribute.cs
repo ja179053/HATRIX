@@ -8,7 +8,7 @@ public class AuthorAttribute : Attribute
 {
 	string sayMyName;
 
-	public AuthorAttribute (string sayMyName)
+	public AuthorAttribute (string sayMyName, TeamRole role)
 	{
 		this.sayMyName = sayMyName;
 	}
@@ -24,4 +24,11 @@ public class AuthorAttribute : Attribute
 		string value = "Author : " + SayMyName;
 		return  value;
 	}
+}
+public enum TeamRole{
+	Programmer,
+	Designer,
+	Animator,
+	Writer,
+	Miscellaneous
 }

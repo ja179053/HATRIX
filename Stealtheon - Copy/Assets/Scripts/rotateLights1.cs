@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[Author ("Zac Desogner")]
+[Author ("Zac", TeamRole.Designer)]
 public class rotateLights1 : MonoBehaviour {
 
 	public float speed = 1f;
