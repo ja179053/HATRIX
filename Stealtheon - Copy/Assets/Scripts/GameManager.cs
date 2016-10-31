@@ -3,16 +3,19 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 [AuthorAttribute ("JJ", TeamRole.Programmer)]
-public class GameManager : MonoBehaviour {
+public class GameManager : Title
+{
 	public static bool paused, options;
 	static Canvas pauseScreen;
 	static AudioSource[] sounds;
 	static Button[] defaultButtons;
 	public GameObject optionsMenu;
-	public static bool Paused{
-		get{
+
+	public static bool Paused {
+		get {
 			return paused;
-		} set {
+		}
+		set {
 			paused = value;
 			if (paused) {
 				foreach (AudioSource aso in sounds) {
@@ -29,36 +32,42 @@ public class GameManager : MonoBehaviour {
 			pauseScreen.enabled = paused;
 		}
 	}
-	void Start(){
+
+	void Start ()
+	{
 		pauseScreen = FindObjectOfType<Canvas> ();
 		sounds = FindObjectsOfType<AudioSource> ();
 		defaultButtons = FindObjectsOfType<Button> ();
 		pauseScreen.enabled = false;
 		Information.conveyorDirection = -1;
+		currentLevel = SceneManager.GetActiveScene().buildIndex;
 	}
-	public void Resume(){
+	new void Update(){
+	}
+	public void Resume ()
+	{
 		Paused = false;
 	}
-	public static void NewLevel(bool nextLevel = true){
-		if (nextLevel) {
-			SceneManager.LoadScene (sceneBuildIndex: +1);
-		}else {
-			SceneManager.LoadScene (0);
-		}
-	}
-	public void Quit(){
+
+	public void Quit ()
+	{
 		Debug.Break ();
 		Application.Quit ();
 	}
-	public void Options(){
+
+	public void Options ()
+	{
 		foreach (Button b in defaultButtons) {
 			b.gameObject.SetActive (optionsMenu.activeSelf);
 		}
 		optionsMenu.SetActive (!optionsMenu.activeSelf);
 	}
+
 	static Button[] activeButtons;
 	public Image icon;
-	static void UpdateIcon(){
+
+	static void UpdateIcon ()
+	{
 		activeButtons = FindObjectsOfType<Button> ();
 		//icon.rectTransform = activeButtons[0].
 	}

@@ -30,5 +30,6 @@ public enum TeamRole{
 	Designer,
 	Animator,
 	Writer,
-	Miscellaneous
+	Miscellaneous,
+	Foreign
 }

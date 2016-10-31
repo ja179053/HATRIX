@@ -4,10 +4,10 @@
 public class FollowScript : MonoBehaviour
 {
 	public Transform[] targets, lookAtTargets;
-	public GameObject[] actors;
+	/*public*/ GameObject[] actors;
 	Transform actor;
 	Transform myPos;
-	public float cameraSpeed = 1;
+	public float cameraSpeed = 1, extraDistance = 0;
 	public Vector3 extra;
 	NavMeshAgent nma;
 	public bool x = true, y = true, z = true;
@@ -73,7 +73,7 @@ public class FollowScript : MonoBehaviour
 		for (int i = 0; i < zeroTransform.Length; i++) {
 			if (zeroTransform.Length > 1) {
 				if (zeroTransform [i].gameObject.activeInHierarchy) {
-					if (Vector3.Distance (myPos.position, closest.position) > (10 + Vector3.Distance (myPos.position, zeroTransform [i].position))) {
+					if ((Vector3.Distance (myPos.position, closest.position) + extraDistance) > (10 + Vector3.Distance (myPos.position, zeroTransform [i].position))) {
 						closest = zeroTransform [i];
 						j = i;
 					}

@@ -2,9 +2,9 @@
 
 [AuthorAttribute ("JJ", TeamRole.Programmer)]
 public class NextLevelTrigger : MonoBehaviour {
-	void OnTrigger(Collider c){
+	void OnTriggerEnter(Collider c){
 		if (c.gameObject.gameObject.tag == "Player") {
-			GameManager.NewLevel ();
+			Title.NewLevel ();
 		}
 	}
 }

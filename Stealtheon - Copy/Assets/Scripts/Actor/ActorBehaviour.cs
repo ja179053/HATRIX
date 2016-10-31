@@ -5,7 +5,7 @@ using System.Collections;
 public class ActorBehaviour : MonoBehaviour
 {
 	
-	public Transform cages;
+	Transform cages;
 	ParticleSystem ps;
 	static GameObject metamorphis;
 	ActorMovement move;
@@ -17,6 +17,7 @@ public class ActorBehaviour : MonoBehaviour
 		ps = GetComponentInChildren<ParticleSystem> ();
 		move = GetComponentInChildren<ActorMovement> ();
 		metamorphis = GameObject.Find ("Metamorphis box");
+		cages = GameObject.Find ("Cages").transform;
 		if (ps != null) {
 			StartCoroutine (ActivateSmoke ());
 		}
