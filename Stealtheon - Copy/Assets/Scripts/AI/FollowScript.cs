@@ -14,9 +14,7 @@ public class FollowScript : MonoBehaviour
 
 	void Start ()
 	{
-		if (actors.Length == 0) {
-			actors = GameObject.FindGameObjectsWithTag ("Player");
-		}
+		actors = GameObject.FindGameObjectsWithTag ("Player");
 		if (GetComponent <NavMeshAgent> () != null) {
 			nma = GetComponent<NavMeshAgent> ();
 		}
