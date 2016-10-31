@@ -36,7 +36,7 @@ public class ActorBehaviour : MonoBehaviour
 		//	CageSwitch ();		
 		} else if (Input.GetKeyDown (KeyCode.Space)) {
 			//	GetComponent<Animation> ().Play ();
-		} else if (Input.GetKeyDown (KeyCode.A)) {
+		} else if (Input.GetKeyDown (KeyCode.X)) {
 			preteleoprt = !preteleoprt;
 			StartCoroutine (ActivateSmoke ());
 			if (preteleoprt) {
