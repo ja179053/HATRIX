@@ -17,10 +17,10 @@ public class ActorBehaviour : MonoBehaviour
 		ps = GetComponentInChildren<ParticleSystem> ();
 		move = GetComponentInChildren<ActorMovement> ();
 		metamorphis = GameObject.Find ("Metamorphis box");
-		cages = GameObject.Find ("Cages").transform;
-		if (ps != null) {
+		if (ps != null) {//Will not work with errors
 			StartCoroutine (ActivateSmoke ());
 		}
+		cages = GameObject.Find ("Cages").transform;
 	}
 	IEnumerator ActivateSmoke(){
 		ps.Play ();
@@ -49,7 +49,7 @@ public class ActorBehaviour : MonoBehaviour
 		}
 	}
 
-	static bool gotKey;
+	public static bool gotKey = false;
 
 	void OnCollisionEnter (Collision c)
 	{
@@ -74,6 +74,7 @@ public class ActorBehaviour : MonoBehaviour
 		} else if (c.gameObject.tag == "Cage switch") {
 			CageSwitch ();
 		} else if (c.gameObject.tag == "Locked Door" && gotKey) {
+			gotKey = false;
 			c.enabled = false;
 			move.Teleport (c.transform.parent.transform.position);
 		}

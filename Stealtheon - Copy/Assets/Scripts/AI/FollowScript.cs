@@ -66,13 +66,23 @@ public class FollowScript : MonoBehaviour
 	//Determines the closest of the lookAtTargets;
 	int ClosestTarget (Transform[] zeroTransform)
 	{
-		Transform closest = zeroTransform [0];
+		Vector3 closest = zeroTransform [0].position;
 		int j = 0;
 		for (int i = 0; i < zeroTransform.Length; i++) {
 			if (zeroTransform.Length > 1) {
 				if (zeroTransform [i].gameObject.activeInHierarchy) {
-					if ((Vector3.Distance (myPos.position, closest.position) + extraDistance) > (10 + Vector3.Distance (myPos.position, zeroTransform [i].position))) {
-						closest = zeroTransform [i];
+					Vector3 target = zeroTransform [i].position;
+					if (!x) {
+						target.x = closest.x = 0;
+					}
+					if (!y) {
+						target.y = closest.y = 0;
+					} 
+					if (!z) {
+						target.z = closest.z = 0;
+					}
+					if ((Vector3.Distance (myPos.position, closest) + extraDistance) > (Vector3.Distance (myPos.position, target))) {
+						closest = zeroTransform [i].position;
 						j = i;
 					}
 				}
@@ -81,6 +91,7 @@ public class FollowScript : MonoBehaviour
 		if (zeroTransform == targets && gameObject.tag == "MainCamera") {
 			ActorMovement.MovementType = j;
 		}
+	//	Debug.Log (name + " " + zeroTransform[j].name);
 		return j;
 	}
 /*	Renderer render;
