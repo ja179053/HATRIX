@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+[AuthorAttribute ("JJ", TeamRole.Programmer)]
 //EnemyLook is the non-abstract enemy class used for patrolling and player detection.
 public class EnemyLook : EnemyMove
 {

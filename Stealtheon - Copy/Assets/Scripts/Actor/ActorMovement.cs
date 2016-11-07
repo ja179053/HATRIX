@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 
+[AuthorAttribute ("JJ", TeamRole.Programmer)]
 public class ActorMovement : Character
 {
 	CharacterController chCo;
 	public bool grounded;
+	public bool move2DOnly;
 	//Initialises character settings
 	void Start ()
 	{
@@ -17,6 +19,9 @@ public class ActorMovement : Character
 		get{
 			return movementType;
 		} set {
+			while (value > 4) {
+				value -= 4;
+			}
 			if (value < 0) {
 				value = 3;
 			} else if (value > 3) {
@@ -32,8 +37,11 @@ public class ActorMovement : Character
 	{
 		MovementType += (int)Input.GetAxis ("Mouse ScrollWheel");
 		//InputMoveType ();
-		float h = (int)Input.GetAxis ("Horizontal") * moveSpeed;
-		float v = (int)Input.GetAxis ("Vertical") * moveSpeed;
+		float h = Input.GetAxis ("Horizontal");
+		float v = 0;
+		if (!move2DOnly) {
+			v = Input.GetAxis ("Vertical");
+		}
 	//	Debug.Log (v + " " + h);
 		Vector3 newPos = Vector3.zero;
 	//	if (h > 0.2f || v > 0.2f) {
@@ -56,9 +64,11 @@ public class ActorMovement : Character
 		CheckGround ();
 		//	Debug.Log (MovementType);
 		if (nma != null) {
-			newPos += transform.position;
 			if (newPos != transform.position) {
-				nma.SetDestination (newPos);
+				nma.SetDestination ((newPos *0.5f)+transform.position);
+				if (nma.speed != moveSpeed) {
+					SetNMASpeed (moveSpeed);
+				}
 			}
 		} else if (grounded) {
 			chCo.Move (newPos * Time.deltaTime);

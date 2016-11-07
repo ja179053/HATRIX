@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 
+[AuthorAttribute ("JJ", TeamRole.Programmer)]
 public abstract class EnemyMove : Character
 {
 	//Patrol points can be dragged on in the inspector view.
 	public Transform[] patrolPoints;
 	//The current target is monitored here.
-	Transform currTarget;
+	public Transform currTarget;
 	//The point in patrolPoints is measured with this int.
 	protected int currPatrolPoint = 0;
 	//Whether the AI wanders or patrols.

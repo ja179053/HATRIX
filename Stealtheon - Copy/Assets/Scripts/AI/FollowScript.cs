@@ -1,21 +1,20 @@
 ﻿using UnityEngine;
-
+[AuthorAttribute ("JJ", TeamRole.Programmer)]
 //FollowScript is used to follow a target. A target to look at can be assigned too.
 public class FollowScript : MonoBehaviour
 {
 	public Transform[] targets, lookAtTargets;
-	public GameObject[] actors;
+	/*public*/ GameObject[] actors;
 	Transform actor;
 	Transform myPos;
-	public float cameraSpeed = 1;
+	public float cameraSpeed = 1, extraDistance = 0;
 	public Vector3 extra;
 	NavMeshAgent nma;
+	public bool x = true, y = true, z = true;
 
 	void Start ()
 	{
-		if (actors.Length == 0) {
-			actors = GameObject.FindGameObjectsWithTag ("Player");
-		}
+		actors = GameObject.FindGameObjectsWithTag ("Player");
 		if (GetComponent <NavMeshAgent> () != null) {
 			nma = GetComponent<NavMeshAgent> ();
 		}
@@ -38,7 +37,22 @@ public class FollowScript : MonoBehaviour
 			myPos = transform;
 		}
 		if (nma == null) {
-			transform.position = Vector3.Lerp (transform.position, targets [ClosestTarget (targets)].position + extra, Time.fixedDeltaTime * cameraSpeed);
+			Vector3 newTarget;
+			if (targets.Length > 0) {
+				newTarget = targets [ClosestTarget (targets)].position;
+			} else {
+				newTarget = actor.position;
+			}
+			if (!x) {
+				newTarget.x = transform.position.x;
+			}
+			if (!y) {
+				newTarget.y = transform.position.y;
+			}
+			if (!z) {
+				newTarget.z = transform.position.z;
+			}
+			transform.position = Vector3.Lerp (transform.position, newTarget + extra, Time.fixedDeltaTime * cameraSpeed);
 		} else {
 			nma.SetDestination (myPos.position + extra);
 		}
@@ -52,25 +66,38 @@ public class FollowScript : MonoBehaviour
 	//Determines the closest of the lookAtTargets;
 	int ClosestTarget (Transform[] zeroTransform)
 	{
-		Transform closest = zeroTransform [0];
+		Vector3 closest = zeroTransform [0].position;
 		int j = 0;
 		for (int i = 0; i < zeroTransform.Length; i++) {
 			if (zeroTransform.Length > 1) {
-				if (Vector3.Distance (myPos.position, closest.position) > (10 + Vector3.Distance (myPos.position, zeroTransform [i].position))) {
-					closest = zeroTransform [i];
-					j = i;
+				if (zeroTransform [i].gameObject.activeInHierarchy) {
+					Vector3 target = zeroTransform [i].position;
+					if (!x) {
+						target.x = closest.x = 0;
+					}
+					if (!y) {
+						target.y = closest.y = 0;
+					} 
+					if (!z) {
+						target.z = closest.z = 0;
+					}
+					if ((Vector3.Distance (myPos.position, closest) + extraDistance) > (Vector3.Distance (myPos.position, target))) {
+						closest = zeroTransform [i].position;
+						j = i;
+					}
 				}
 			}
 		}
 		if (zeroTransform == targets && gameObject.tag == "MainCamera") {
 			ActorMovement.MovementType = j;
 		}
+	//	Debug.Log (name + " " + zeroTransform[j].name);
 		return j;
 	}
-	Renderer render;
+/*	Renderer render;
 	void OnTriggerEnter(Collider c){
 		if (c.gameObject.tag == "Teleporter") {
 			render.enabled = !render.enabled;
 		}
-	}
+	}*/
 }
