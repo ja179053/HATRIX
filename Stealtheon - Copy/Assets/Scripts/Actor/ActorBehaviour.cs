@@ -1,26 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[AuthorAttribute ("JJ", TeamRole.Programmer)]
 public class ActorBehaviour : MonoBehaviour
 {
 	
-	Transform cages;
+	public Transform cages;
 	ParticleSystem ps;
 	static GameObject metamorphis;
 	ActorMovement move;
 	bool preteleoprt;
+	GameManager gm;
 	public float smokeDuration = 2;
 	//Initialises character settings
 	void Start ()
 	{
 		ps = GetComponentInChildren<ParticleSystem> ();
 		move = GetComponentInChildren<ActorMovement> ();
+		gm = FindObjectOfType<GameManager> ();
 		metamorphis = GameObject.Find ("Metamorphis box");
-		if (ps != null) {//Will not work with errors
-			StartCoroutine (ActivateSmoke ());
-		}
-		cages = GameObject.Find ("Cages").transform;
+		StartCoroutine (ActivateSmoke ());
 	}
 	IEnumerator ActivateSmoke(){
 		ps.Play ();
@@ -33,10 +31,10 @@ public class ActorBehaviour : MonoBehaviour
 	void Update ()
 	{
 		if (Input.GetKeyDown (KeyCode.L)) {
-		//	CageSwitch ();		
+			CageSwitch ();		
 		} else if (Input.GetKeyDown (KeyCode.Space)) {
 			//	GetComponent<Animation> ().Play ();
-		} else if (Input.GetKeyDown (KeyCode.X)) {
+		} else if (Input.GetKeyDown (KeyCode.A)) {
 			preteleoprt = !preteleoprt;
 			StartCoroutine (ActivateSmoke ());
 			if (preteleoprt) {
@@ -45,17 +43,24 @@ public class ActorBehaviour : MonoBehaviour
 				move.Teleport (metamorphis.transform.position);
 			}
 		} else if (Input.GetKeyDown (KeyCode.Escape)) {
+			gm.Quit ();
+		} else if (Input.GetKeyDown (KeyCode.P)) {
 			GameManager.Paused = !GameManager.Paused;
 		}
 	}
 
-	public static bool gotKey = false;
+	static bool gotKey;
 
 	void OnCollisionEnter (Collision c)
 	{
-		if (c.gameObject.tag == "Key") {
+		if (c.gameObject.tag == "Locked Door" && gotKey) {
+			c.collider.enabled = false;
+			Debug.Log ("unlocked");
+		} else if (c.gameObject.tag == "Key") {
 			Destroy (c.gameObject);
 			gotKey = true;
+		} else if (c.gameObject.tag == "Cage switch") {
+			CageSwitch ();
 		} 
 	}
 
@@ -71,12 +76,6 @@ public class ActorBehaviour : MonoBehaviour
 			}*/
 		} else if (!ActorMovement.canInput && c.gameObject.tag == "Teletarget") {		
 			ActorMovement.canInput = true;
-		} else if (c.gameObject.tag == "Cage switch") {
-			CageSwitch ();
-		} else if (c.gameObject.tag == "Locked Door" && gotKey) {
-			gotKey = false;
-			c.enabled = false;
-			move.Teleport (c.transform.parent.transform.position);
 		}
 	}
 
@@ -86,7 +85,7 @@ public class ActorBehaviour : MonoBehaviour
 			cages = GameObject.Find ("Cages").transform;
 		}
 		Information.conveyorDirection *= -1;
-		cages.position += (Vector3.up * 17);
+		cages.position = new Vector3 (cages.position.x, 19, cages.position.z);	
 	}
 }
 
