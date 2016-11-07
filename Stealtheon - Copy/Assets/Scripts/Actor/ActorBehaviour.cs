@@ -72,10 +72,13 @@ public class ActorBehaviour : MonoBehaviour
 		} else if (!ActorMovement.canInput && c.gameObject.tag == "Teletarget") {		
 			ActorMovement.canInput = true;
 		} else if (c.gameObject.tag == "Cage switch") {
+			c.GetComponent<Animation> ().Play ();
 			CageSwitch ();
 		} else if (c.gameObject.tag == "Locked Door" && gotKey) {
 			gotKey = false;
+			c.GetComponent<Animation> ().Play ();
 			c.enabled = false;
+			Debug.Log ("found the door");
 			move.Teleport (c.transform.parent.transform.position);
 		}
 	}
