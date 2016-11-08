@@ -4,6 +4,7 @@
 public class ActorMovement : Character
 {
 	CharacterController chCo;
+	Animator anim;
 	public bool grounded;
 	public bool move2DOnly;
 	//Initialises character settings
@@ -11,6 +12,7 @@ public class ActorMovement : Character
 	{
 		CharacterSettings ();
 		chCo = GetComponentInParent<CharacterController> ();
+		anim = GetComponentInChildren<Animator> ();
 	}
 
 	//Sets nma destination according to inputs.
@@ -42,6 +44,8 @@ public class ActorMovement : Character
 		if (!move2DOnly) {
 			v = Input.GetAxis ("Vertical");
 		}
+		bool noInput = (h == 0 && v == 0) ? true : false;
+		anim.SetBool ("Input", !noInput);
 	//	Debug.Log (v + " " + h);
 		Vector3 newPos = Vector3.zero;
 	//	if (h > 0.2f || v > 0.2f) {
