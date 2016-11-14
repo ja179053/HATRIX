@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
+
 [AuthorAttribute ("JJ", TeamRole.Programmer)]
 //FollowScript is used to follow a target. A target to look at can be assigned too.
 public class FollowScript : MonoBehaviour
 {
 	public Transform[] targets, lookAtTargets;
-	/*public*/ GameObject[] actors;
-	Transform actor;
-	Transform myPos;
+	/*public*/
+	GameObject[] actors;
+	Transform myPos, currFollowTarget;
 	public float cameraSpeed = 1, extraDistance = 0;
 	public Vector3 extra;
 	NavMeshAgent nma;
@@ -20,28 +21,32 @@ public class FollowScript : MonoBehaviour
 		}
 		for (int i = 0; i < actors.Length; i++) {
 			if (actors [i] != null) {
-				actor = actors [i].transform;
+				myPos = actors [i].transform;
 				break;
 			}
 		}
-		if (actor == null) {
+		if (myPos == null) {
 			Debug.LogError ("ACTOR NOT ASSIGNED TO CAMERA " + gameObject.name);
+			myPos = transform;
 		}
 	}
 	// Moves towards a target and looks towards a 2nd target. Extra position can be added in the inspector.
+	//NEEDS NEWTARGET TO COUNTERACT XYZ WHEN NEEDED.
 	void FixedUpdate ()
 	{
-		if (actor != null) {
-			myPos = actor;
-		} else {
-			myPos = transform;
-		}
 		if (nma == null) {
-			Vector3 newTarget;
+			Vector3 newTarget = new Vector3 ();
+			if(currFollowTarget){
+				newTarget = currFollowTarget.position;
+			}
 			if (targets.Length > 0) {
-				newTarget = targets [ClosestTarget (targets)].position;
+				int i = ClosestTarget (targets);
+				if (targets [i].position != newTarget) {
+					currFollowTarget = targets [i];
+					newTarget = currFollowTarget.position;
+				}
 			} else {
-				newTarget = actor.position;
+				newTarget = myPos.position;
 			}
 			if (!x) {
 				newTarget.x = transform.position.x;
@@ -56,9 +61,7 @@ public class FollowScript : MonoBehaviour
 		} else {
 			nma.SetDestination (myPos.position + extra);
 		}
-		//	Debug.Log ("Closest is " + ClosestTarget (targets).name + " " + Vector3.Distance(myPos.position, ClosestTarget(targets).position));
-		//	Debug.Log (targets [3].name + " " + Vector3.Distance (myPos.position, targets [3].position));
-		//	transform.LookAt (ClosestTarget());
+		//	Debug.Log ("Closest is " + targets[ClosestTarget (targets)].name + " " + Vector3.Distance(myPos.position, targets[ClosestTarget(targets)].position) + " from " + name);
 		if (lookAtTargets.Length > 0) {
 			transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation (lookAtTargets [ClosestTarget (lookAtTargets)].position - transform.position), Time.fixedDeltaTime * cameraSpeed);
 		}
@@ -91,10 +94,10 @@ public class FollowScript : MonoBehaviour
 		if (zeroTransform == targets && gameObject.tag == "MainCamera") {
 			ActorMovement.MovementType = j;
 		}
-	//	Debug.Log (name + " " + zeroTransform[j].name);
+		//	Debug.Log (name + " " + zeroTransform[j].name);
 		return j;
 	}
-/*	Renderer render;
+	/*	Renderer render;
 	void OnTriggerEnter(Collider c){
 		if (c.gameObject.tag == "Teleporter") {
 			render.enabled = !render.enabled;
