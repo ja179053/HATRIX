@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[AuthorAttribute ("Zac", TeamRole.Designer)]
 public class buttonscript : MonoBehaviour {
 
 	public GameObject wall;

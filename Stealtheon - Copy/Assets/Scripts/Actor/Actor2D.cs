@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+namespace Actor{
 public class Actor2D : MonoBehaviour {
 	Rigidbody2D rb;
 	public float speed = 1, jumpForce = 100;
@@ -16,4 +17,5 @@ public class Actor2D : MonoBehaviour {
 			rb.AddForce (jumpForce * transform.up);
 		}
 	}
+}
 }

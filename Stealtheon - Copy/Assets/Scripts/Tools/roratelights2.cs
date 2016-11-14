@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+
+namespace Tools{
 [Author ("Zac", TeamRole.Designer)]
 public class roratelights2 : MonoBehaviour {
 
@@ -15,5 +17,5 @@ public class roratelights2 : MonoBehaviour {
         transform.Rotate(Vector3.down, speed, Space.World);
         transform.Rotate(Vector3.left, speed, Space.World);
     }
-
+	}
 }

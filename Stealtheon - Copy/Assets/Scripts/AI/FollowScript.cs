@@ -92,7 +92,7 @@ public class FollowScript : MonoBehaviour
 			}
 		}
 		if (zeroTransform == targets && gameObject.tag == "MainCamera") {
-			ActorMovement.MovementType = j;
+			Actor.ActorMovement.MovementType = j;
 		}
 		//	Debug.Log (name + " " + zeroTransform[j].name);
 		return j;

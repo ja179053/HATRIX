@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+namespace Tools{
 [AuthorAttribute ("JJ", TeamRole.Programmer)]
 public class Background : MonoBehaviour {
 	public int length = 1;
@@ -23,5 +24,6 @@ public class Background : MonoBehaviour {
 			g.transform.localPosition += Vector3.up * (int)blockHeight * blockHeight;
 			i += blockWidth;
 		}
+	}
 	}
 }

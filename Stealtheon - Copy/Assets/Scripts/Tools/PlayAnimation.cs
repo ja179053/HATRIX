@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+namespace Tools{
+[AuthorAttribute ("JJ", TeamRole.Programmer)]
 public class PlayAnimation : MonoBehaviour {
 
 	// Use this for initialization
@@ -14,4 +16,5 @@ public class PlayAnimation : MonoBehaviour {
 			GetComponent<Animation> ().Play ();
 		}
 	}
+}
 }

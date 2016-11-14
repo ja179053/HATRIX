@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-
-public class simpleCharcterMovementZac : MonoBehaviour {
+[AuthorAttribute ("Zac", TeamRole.Designer)]
+public class SimpleCharcterMovement : MonoBehaviour {
 
 	public float speed = 9f;
 

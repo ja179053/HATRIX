@@ -4,7 +4,7 @@
 public class GameManager : Title
 {
 	public static bool paused, options;
-	static Canvas pauseScreen;
+	static GameObject pauseScreen;
 
 	public static bool Paused {
 		get {
@@ -18,15 +18,15 @@ public class GameManager : Title
 				Time.timeScale = 1;
 			}
 			SoundManager.PauseSound (paused);
-			pauseScreen.enabled = paused;
+			pauseScreen.SetActive(paused);
 		}
 	}
 
 	void Start ()
 	{
 		ManagerSettings ();
-		pauseScreen = FindObjectOfType<Canvas> ();
-		pauseScreen.enabled = false;
+		pauseScreen = GameObject.Find ("Pause Menu");
+		pauseScreen.SetActive(false);
 		Information.conveyorDirection = -1;
 	}
 	new void Update(){

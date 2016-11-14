@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Audio;
 
+[AuthorAttribute ("JJ", TeamRole.Programmer)]
 public class SoundManager : MonoBehaviour {
 	//public AudioSource[]
 	public AudioClip endLevel;
@@ -24,5 +25,8 @@ public class SoundManager : MonoBehaviour {
 				aso.UnPause ();
 			}
 		}
+	}
+	public void Mute(){
+		sounds [0].outputAudioMixerGroup.audioMixer.SetFloat ("Master", 0);
 	}
 }

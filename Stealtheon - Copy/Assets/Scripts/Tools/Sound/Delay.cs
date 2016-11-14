@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+namespace Tools{
 public class Delay : MonoBehaviour {
 
 	// Use this for initialization
@@ -12,4 +13,5 @@ public class Delay : MonoBehaviour {
 	void Update () {
 	
 	}
+}
 }

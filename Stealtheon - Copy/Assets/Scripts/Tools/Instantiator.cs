@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+namespace Tools{
+[AuthorAttribute ("JJ", TeamRole.Programmer)]
 public class Instantiator : MonoBehaviour
 {
 	public string keyboardButton = "space";
@@ -21,4 +23,5 @@ public class Instantiator : MonoBehaviour
 			Debug.Log (i);
 		}
 	}
+}
 }

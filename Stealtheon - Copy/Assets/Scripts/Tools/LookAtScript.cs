@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+namespace Tools{
+[AuthorAttribute ("JJ", TeamRole.Programmer)]
 public class LookAtScript : MonoBehaviour {
 	public Transform target;
 	public Vector3 extra;
@@ -13,4 +15,5 @@ public class LookAtScript : MonoBehaviour {
 			transform.LookAt (target.position + extra);
 		}
 	}
+}
 }

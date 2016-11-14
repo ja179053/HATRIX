@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+[AuthorAttribute ("Zac", TeamRole.Designer)]
 public class donthitme : MonoBehaviour {
 
 	public GameObject audience;
