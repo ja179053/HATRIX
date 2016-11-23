@@ -2,9 +2,9 @@ Initialize engine version: 5.4.1f1 (649f48bbbf0f)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
-    Renderer: NVIDIA GeForce GTX 750 Ti (ID=0x1380)
-    Vendor:   NVIDIA
-    VRAM:     1993 MB
+    Renderer: Intel(R) HD Graphics (ID=0x22b1)
+    Vendor:   Intel
+    VRAM:     1113 MB
 Begin MonoManager ReloadAssembly
 Platform assembly: D:\HATRIX\Stealtheon - Copy\Builds\PC build_Data\Managed\UnityEngine.dll (this message is harmless)
 Loading D:\HATRIX\Stealtheon - Copy\Builds\PC build_Data\Managed\UnityEngine.dll into Unity Child Domain
@@ -14,9 +14,9 @@ Platform assembly: D:\HATRIX\Stealtheon - Copy\Builds\PC build_Data\Managed\Unit
 Loading D:\HATRIX\Stealtheon - Copy\Builds\PC build_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: D:\HATRIX\Stealtheon - Copy\Builds\PC build_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading D:\HATRIX\Stealtheon - Copy\Builds\PC build_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.108 seconds
+- Completed reload, in  0.642 seconds
 Platform assembly: D:\HATRIX\Stealtheon - Copy\Builds\PC build_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: D:\HATRIX\Stealtheon - Copy\Builds\PC build_Data\Managed\System.dll (this message is harmless)
-desktop: 1920x1080 60Hz; virtual: 3840x1080 at 0,0
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
