@@ -11,24 +11,13 @@ namespace Actor
 		static ParticleSystem ps;
 		static ActorMovement move;
 		public static Vector3 currentPos;
-		public static float smokeDuration = 2;
 		public string metamorphosisKey = "x";
 		//Initialises character settings
 		void Start ()
 		{
 			ps = GetComponentInChildren<ParticleSystem> ();
 			move = GetComponentInChildren<ActorMovement> ();
-			if (ps != null) {//Will not work with errors
-				StartCoroutine (ActivateSmoke ());
-			}
 			cages = GameObject.Find ("Cages").transform;
-		}
-
-		IEnumerator ActivateSmoke ()
-		{
-			ps.Play ();
-			yield return new WaitForSeconds (smokeDuration);
-			ps.Stop ();
 		}
 
 		// Moves the actor and raycasts to determine if finish has been accessed.
@@ -40,7 +29,6 @@ namespace Actor
 			} else if (Input.GetKeyDown (KeyCode.Space)) {
 				//	GetComponent<Animation> ().Play ();
 			} else if (Input.GetKeyDown (metamorphosisKey)) {
-				StartCoroutine (ActivateSmoke ());
 				currentPos = transform.position;
 				Actor.Metamorphosis.MetamorphosisInput ();
 			} else if (Input.GetKeyDown (KeyCode.Escape)) {
