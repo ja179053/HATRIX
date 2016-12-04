@@ -3,7 +3,7 @@ using System.Collections;
 
 [AuthorAttribute ("JJ", TeamRole.Programmer)]
 public class MirrorPuzzle : Puzzle {
-	public GameObject mirrorA, mirrorB;
+	public Rigidbody mirrorA, mirrorB;
 	public float allowance = 0.2f;
 
 	void Update () {
@@ -12,6 +12,7 @@ public class MirrorPuzzle : Puzzle {
 		bool mirrorZ = (Mathf.Round(mirrorA.transform.localPosition.z) == Mathf.Round(mirrorB.transform.localPosition.z)) ? true : false;
 		if (mirrorX && mirrorY && mirrorZ) {
 			CompletePuzzle ();
+			mirrorA.isKinematic = mirrorB.isKinematic = true;
 			this.enabled = false;;
 		} /*else {
 			Debug.Log ("A is " + mirrorA.transform.localPosition + " B is " + mirrorB.transform.localPosition);	

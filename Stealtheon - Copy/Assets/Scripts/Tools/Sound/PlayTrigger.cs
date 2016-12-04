@@ -3,16 +3,26 @@ using System.Collections;
 
 public class PlayTrigger : MonoBehaviour {
 	public float delaytime;
-	public bool once = true;
+	public bool once = true, canTrigger = true;
+	public AudioSource aso;
+	AudioClip defaultClip;
 	void OnTriggerEnter(Collider c){
-		GetComponent<Collider> ().enabled = false;
-		StartCoroutine (Play ());
+		if (once && canTrigger) {
+			GetComponent<Collider> ().enabled = false;
+		}
+		StartCoroutine (Play (defaultClip));
 	}
-	IEnumerator Play(){
+	public IEnumerator Play(AudioClip ac = default (AudioClip)){
+		aso.clip = ac;
 		yield return new WaitForSeconds (delaytime);
-		GetComponent<AudioSource> ().Play ();
-		if (once){
-			Destroy (this.gameObject);
+		if (!aso.isPlaying) {
+			aso.Play ();
+		}
+	}
+	void Start(){
+		if (aso == null) {
+			aso = GetComponent<AudioSource> ();
+			defaultClip = aso.clip;
 		}
 	}
 }

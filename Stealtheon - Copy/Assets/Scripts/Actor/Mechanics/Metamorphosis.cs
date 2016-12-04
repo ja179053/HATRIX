@@ -3,8 +3,9 @@ using System.Collections;
 
 namespace Actor
 {
-	public class Metamorphosis : MonoBehaviour
+	public class Metamorphosis : Singleton<Metamorphosis>
 	{
+		protected Metamorphosis(){}
 		public float smokeDuration = 2;
 		static bool preteleport = false;
 		static GameObject metamorphosis;
