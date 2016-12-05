@@ -3,20 +3,15 @@
 namespace Actor
 {
 	[AuthorAttribute ("JJ", TeamRole.Programmer)]
-	public class ActorMovement : Character
+	public abstract class ActorMovement : Singleton<ActorMovement>
 	{
-		CharacterController chCo;
-		Animator anim;
-		public bool grounded;
+		//CharacterController chCo;
+		protected Animator anim;
+		protected static NavMeshAgent nma;
+		public bool grounded, jumping;
 		public bool move2DOnly;
 		public static GameObject metamorphosis;
-		//Initialises character settings
-		void Start ()
-		{
-			CharacterSettings ();
-			chCo = GetComponentInParent<CharacterController> ();
-			anim = GetComponentInChildren<Animator> ();
-		}
+		public static Vector3 currentPos;
 
 		//Sets nma destination according to inputs.
 		static int movementType;
@@ -76,15 +71,12 @@ namespace Actor
 			if (nma != null) {
 				if (newPos != transform.position) {
 					nma.SetDestination ((newPos * 0.5f) + transform.position);
-					if (nma.speed != moveSpeed) {
-						SetNMASpeed (moveSpeed);
-					}
 				}
-			} else if (grounded) {
+			}/* else if (grounded) {
 				chCo.Move (newPos * Time.deltaTime);
 			} else {
 				chCo.Move (-newPos * Time.deltaTime);
-			}
+			}*/
 		}
 		//RAYCAST ALL 4 CORNERS
 		void CheckGround ()
@@ -96,17 +88,16 @@ namespace Actor
 		}*/
 		}
 
-		public void Teleport (Vector3 v)
+		public static void Teleport (Vector3 v)
 		{
-			//	canInput = false;
-			if (transform.position != v) {	
-				if (nma != null) {
-					nma.Warp (v);
-				} else {		
-					transform.position = v;
+				canInput = false;
+			if (currentPos != v) {	
+				if (nma != null) {					
+					//nma.Warp (v);
+					nma.SetDestination(v);
 				}
 			} else {
-				//		canInput = true;
+						canInput = true;
 			}
 		}
 

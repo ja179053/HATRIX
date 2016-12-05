@@ -37,6 +37,9 @@ public class GameManager : Title
 				activeButtons [currentButton].onClick.Invoke ();
 			}
 		}
+		if (Input.GetKeyDown (KeyCode.Escape)) {
+			GameManager.Paused = !GameManager.Paused;
+		}
 	}
 	public void Resume ()
 	{

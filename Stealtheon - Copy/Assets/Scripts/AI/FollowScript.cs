@@ -97,10 +97,4 @@ public class FollowScript : MonoBehaviour
 		//	Debug.Log (name + " " + zeroTransform[j].name);
 		return j;
 	}
-	/*	Renderer render;
-	void OnTriggerEnter(Collider c){
-		if (c.gameObject.tag == "Teleporter") {
-			render.enabled = !render.enabled;
-		}
-	}*/
 }
