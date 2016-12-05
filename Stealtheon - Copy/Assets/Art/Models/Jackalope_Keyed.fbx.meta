@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 98354882017cdc34abcf185ae3bc0021
-timeCreated: 1478528405
+guid: 886782761eb90bb42944ca36953c9d5f
+timeCreated: 1480953568
 licenseType: Pro
 ModelImporter:
   serializedVersion: 19
@@ -92,7 +92,7 @@ ModelImporter:
     400082: joint9
     400084: pCylinder5
     4300000: pCylinder5
-    7400000: Idle
+    7400000: Jackelope Jump Keyed
     9500000: //RootNode
     13700000: pCylinder5
   materials:
@@ -117,10 +117,10 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Idle
+      name: Jackelope Jump Keyed
       takeName: Take 001
       firstFrame: 1
-      lastFrame: 235
+      lastFrame: 60
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
