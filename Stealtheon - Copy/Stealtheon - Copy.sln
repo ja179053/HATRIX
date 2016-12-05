@@ -5,6 +5,8 @@ Project("{4F0A8641-5B64-A262-9DE3-2826C5355259}") = "Stealtheon - Copy", "Assemb
 EndProject
 Project("{4F0A8641-5B64-A262-9DE3-2826C5355259}") = "Stealtheon - Copy", "Assembly-CSharp.csproj", "{7B6CDC8C-9083-C4B3-CE17-237FBC90C731}"
 EndProject
+Project("{4F0A8641-5B64-A262-9DE3-2826C5355259}") = "Stealtheon - Copy", "Assembly-CSharp-Editor.csproj", "{A6DD8080-3BF8-E628-58FA-57B2833312D0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{7B6CDC8C-9083-C4B3-CE17-237FBC90C731}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B6CDC8C-9083-C4B3-CE17-237FBC90C731}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B6CDC8C-9083-C4B3-CE17-237FBC90C731}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6DD8080-3BF8-E628-58FA-57B2833312D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6DD8080-3BF8-E628-58FA-57B2833312D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6DD8080-3BF8-E628-58FA-57B2833312D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6DD8080-3BF8-E628-58FA-57B2833312D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
