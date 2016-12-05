@@ -4,15 +4,17 @@ using UnityEngine.UI;
 using System.Collections;
 //Controls the level loaded. Exits on scene 0.
 [AuthorAttribute ("JJ", TeamRole.Programmer)]
-public class Title : MonoBehaviour
+public class Title : Singleton<Title>
 {
+	protected Title(){}
+	
 	GameObject optionsMenu;
 	protected static int currentLevel = 0;
 	void Start(){
 		currentLevel = 0;
 		ManagerSettings ();
 	}
-	SoundManager sa;
+	protected static SoundManager sa;
 	protected void ManagerSettings(){
 		sa = FindObjectOfType<SoundManager> ();
 		currentLevel = SceneManager.GetActiveScene().buildIndex;

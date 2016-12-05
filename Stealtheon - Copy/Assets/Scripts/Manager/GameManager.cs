@@ -17,7 +17,7 @@ public class GameManager : Title
 			} else {
 				Time.timeScale = 1;
 			}
-			SoundManager.PauseSound (paused);
+			sa.PauseSound (paused);
 			pauseScreen.SetActive(paused);
 		}
 	}

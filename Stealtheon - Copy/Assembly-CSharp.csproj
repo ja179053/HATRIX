@@ -45,13 +45,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\AI\Art\Hatching.cs" />
      <Compile Include="Assets\Scripts\AI\CameraZoom.cs" />
      <Compile Include="Assets\Scripts\AI\EnemyLook.cs" />
      <Compile Include="Assets\Scripts\AI\EnemyMove.cs" />
      <Compile Include="Assets\Scripts\AI\FollowScript.cs" />
      <Compile Include="Assets\Scripts\Abstracts\Character.cs" />
      <Compile Include="Assets\Scripts\Abstracts\Information.cs" />
+     <Compile Include="Assets\Scripts\Abstracts\Mechanic.cs" />
      <Compile Include="Assets\Scripts\Abstracts\Puzzle.cs" />
+     <Compile Include="Assets\Scripts\Abstracts\Singleton.cs" />
      <Compile Include="Assets\Scripts\Actor\ABehaviour.cs" />
      <Compile Include="Assets\Scripts\Actor\Actor2D.cs" />
      <Compile Include="Assets\Scripts\Actor\ActorMovement.cs" />
@@ -64,9 +67,6 @@
      <Compile Include="Assets\Scripts\Manager\GameManager.cs" />
      <Compile Include="Assets\Scripts\Manager\SoundManager.cs" />
      <Compile Include="Assets\Scripts\Manager\Title.cs" />
-     <Compile Include="Assets\Scripts\Middle.cs" />
-     <Compile Include="Assets\Scripts\Mirror.cs" />
-     <Compile Include="Assets\Scripts\P1Movement.cs" />
      <Compile Include="Assets\Scripts\Puzzles\MirrorPuzzle.cs" />
      <Compile Include="Assets\Scripts\Puzzles\MoveOnConveyor.cs" />
      <Compile Include="Assets\Scripts\Puzzles\NextLevelTrigger.cs" />
@@ -77,18 +77,18 @@
      <Compile Include="Assets\Scripts\Tools\Instantiator.cs" />
      <Compile Include="Assets\Scripts\Tools\LookAtScript.cs" />
      <Compile Include="Assets\Scripts\Tools\PlayAnimation.cs" />
-     <Compile Include="Assets\Scripts\Tools\Sound\Delay.cs" />
      <Compile Include="Assets\Scripts\Tools\Sound\PlayTrigger.cs" />
      <Compile Include="Assets\Scripts\Tools\roratelights2.cs" />
      <Compile Include="Assets\Scripts\Tools\rotateLights1.cs" />
+     <Compile Include="Assets\Scripts\Zac Random\Middle.cs" />
+     <Compile Include="Assets\Scripts\Zac Random\Mirror.cs" />
+     <Compile Include="Assets\Scripts\Zac Random\P1Movement.cs" />
      <Compile Include="Assets\Scripts\Zac Random\buttonscript.cs" />
-     <Compile Include="Assets\Scripts\audienceScript.cs" />
-     <Compile Include="Assets\Scripts\moveClone.cs" />
-     <Compile Include="Assets\Scripts\moveth9is.cs" />
-     <Compile Include="Assets\Scripts\transition1.cs" />
-     <Compile Include="Assets\Scripts\transition2.cs" />
-     <Compile Include="Assets\Scripts\transition3.cs" />
-     <Compile Include="Assets\Scripts\transitionCode.cs" />
+     <Compile Include="Assets\Scripts\Zac Random\moveth9is.cs" />
+     <Compile Include="Assets\Scripts\Zac Random\transition1.cs" />
+     <Compile Include="Assets\Scripts\Zac Random\transition2.cs" />
+     <Compile Include="Assets\Scripts\Zac Random\transition3.cs" />
+     <Compile Include="Assets\Scripts\Zac Random\transitionCode.cs" />
      <None Include="Assets\Scripts\Shaders\MirrorEffectS.shader" />
      <None Include="Assets\Scripts\Shaders\MagicShader3.shader" />
      <None Include="Assets\Scripts\Shaders\TextureSpin.shader" />
@@ -108,6 +108,12 @@
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Drawing">
+ <HintPath>D:/HATRIX/Stealtheon - Copy/Assets/System.Drawing.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Windows.Forms">
+ <HintPath>D:/HATRIX/Stealtheon - Copy/Assets/System.Windows.Forms.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
