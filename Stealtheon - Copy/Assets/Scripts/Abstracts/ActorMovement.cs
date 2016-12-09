@@ -88,12 +88,15 @@ namespace Actor
 		}*/
 		}
 
-		public static void Teleport (Vector3 v)
+		public static void Teleport (Vector3 v, bool warp = false)
 		{
+			if (warp) {			
+				nma.Warp (v);
+				return;
+			}
 				canInput = false;
 			if (currentPos != v) {	
-				if (nma != null) {					
-					//nma.Warp (v);
+				if (nma != null) {		
 					nma.SetDestination(v);
 				}
 			} else {

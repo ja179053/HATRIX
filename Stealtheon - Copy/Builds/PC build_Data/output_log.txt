@@ -14,7 +14,7 @@ Platform assembly: D:\HATRIX\Stealtheon - Copy\Builds\PC build_Data\Managed\Unit
 Loading D:\HATRIX\Stealtheon - Copy\Builds\PC build_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: D:\HATRIX\Stealtheon - Copy\Builds\PC build_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading D:\HATRIX\Stealtheon - Copy\Builds\PC build_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.055 seconds
+- Completed reload, in  0.041 seconds
 Platform assembly: D:\HATRIX\Stealtheon - Copy\Builds\PC build_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: D:\HATRIX\Stealtheon - Copy\Builds\PC build_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 3840x1080 at 0,0

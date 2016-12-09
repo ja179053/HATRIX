@@ -11,12 +11,12 @@ namespace Actor
 		static EndJump ejump;
 
 		void Start(){
-			cages = GameObject.Find ("Cages").transform;
 			nma = GetComponent<NavMeshAgent> ();
 			//chCo = GetComponentInParent<CharacterController> ();
 			anim = GetComponentInChildren<Animator> ();
 			ejump = GetComponentInChildren<EndJump> ();
 			ejump.gameObject.SetActive (false);
+			cages = GameObject.Find ("Cages").transform;
 		}
 
 		void OnTriggerEnter (Collider c)
@@ -32,8 +32,9 @@ namespace Actor
 			} else if (c.gameObject.tag == "Locked Door" && gotKey) {
 				gotKey = false;
 				c.GetComponent<Animation> ().Play ();
-				c.enabled = false;
-				ActorMovement.Teleport (c.transform.parent.transform.position);
+			//	c.enabled = false;
+				//WARPS UNTIL ANIMATION IS IN
+				ActorMovement.Teleport (c.transform.parent.transform.position, true);
 			}
 		}
 
