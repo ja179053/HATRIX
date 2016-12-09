@@ -108,9 +108,6 @@
  <Reference Include="UnityEngine.Networking">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
- <Reference Include="System.Drawing">
- <HintPath>D:/HATRIX/Stealtheon - Copy/Assets/System.Drawing.dll</HintPath>
- </Reference>
  <Reference Include="System.Windows.Forms">
  <HintPath>D:/HATRIX/Stealtheon - Copy/Assets/System.Windows.Forms.dll</HintPath>
  </Reference>

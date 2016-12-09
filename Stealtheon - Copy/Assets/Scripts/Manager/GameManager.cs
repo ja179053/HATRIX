@@ -12,13 +12,13 @@ public class GameManager : Title
 		}
 		set {
 			paused = value;
+			pauseScreen.SetActive(paused);
 			if (paused) {
 				Time.timeScale = 0.001f;
 			} else {
 				Time.timeScale = 1;
 			}
 			sa.PauseSound (paused);
-			pauseScreen.SetActive(paused);
 		}
 	}
 
