@@ -16,7 +16,10 @@ namespace Actor
 			anim = GetComponentInChildren<Animator> ();
 			ejump = GetComponentInChildren<EndJump> ();
 			ejump.gameObject.SetActive (false);
+			try{
 			cages = GameObject.Find ("Cages").transform;
+			} catch{
+			}
 		}
 
 		void OnTriggerEnter (Collider c)
