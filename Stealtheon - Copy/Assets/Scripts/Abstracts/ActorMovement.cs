@@ -12,7 +12,7 @@ namespace Actor
 		public bool move2DOnly;
 		public static GameObject metamorphosis;
 		public static Vector3 currentPos;
-
+		protected static bool pcMode;
 		//Sets nma destination according to inputs.
 		static int movementType;
 
@@ -40,10 +40,19 @@ namespace Actor
 		{
 			MovementType += (int)Input.GetAxis ("Mouse ScrollWheel");
 			//InputMoveType ();
-			float h = Input.GetAxis ("Horizontal");
 			float v = 0;
-			if (!move2DOnly) {
-				v = Input.GetAxis ("Vertical");
+			float h = 0;
+			if (pcMode) {
+				//ADD A NEW MOVEMENT ENUM. ALLOWS KEYBOARD CONTROL, CLICK CONTROL AND TOUCH CONTROL
+				h = Input.GetAxis ("Horizontal");
+				if (!move2DOnly) {
+					v = Input.GetAxis ("Vertical");
+				}
+			} else {
+				h = (Input.GetTouch (0).position.x - (Screen.width / 2)) / Screen.width;
+				if (!move2DOnly) {
+					v = (Input.GetTouch (0).position.y - (Screen.height / 2)) / Screen.height;
+				}
 			}
 			bool noInput = (h == 0 && v == 0) ? true : false;
 			anim.SetBool ("Input", !noInput);
@@ -94,13 +103,13 @@ namespace Actor
 				nma.Warp (v);
 				return;
 			}
-				canInput = false;
+			canInput = false;
 			if (currentPos != v) {	
 				if (nma != null) {		
-					nma.SetDestination(v);
+					nma.SetDestination (v);
 				}
 			} else {
-						canInput = true;
+				canInput = true;
 			}
 		}
 

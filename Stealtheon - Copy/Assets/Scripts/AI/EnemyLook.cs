@@ -10,19 +10,24 @@ public class EnemyLook : EnemyMove
 	Ray ray;
 	//TempPos used to draw gizmos.
 	Vector3 tempPos;
+	Quaternion direction;
 
 	//Initialises CharacterSettings, determines if AI can patrol and starts search coroutine.
 	void Start ()
 	{
 		CharacterSettings ();
+		direction = new Quaternion ();
 		if (patrolPoints.Length < 2) {
 			wander = true;
 		}
 		if (wander) {
 		} else {
+			LookForward ();
 			NewTarget (patrolPoints [currPatrolPoint]);
 		}
-		StartCoroutine (ScanRadius());
+		if (scanRadius > 0) {
+			StartCoroutine (ScanRadius ());
+		}
 	}
 	//Draws a ray forward
 	//Casts a ray to catch the player or the next patrol point
@@ -38,12 +43,18 @@ public class EnemyLook : EnemyMove
 				Debug.Log ("GAME OVER");
 			} 
 		}
+		if (shouldMove) {
+			transform.position = Vector3.MoveTowards (transform.position, currTarget, Time.deltaTime * moveSpeed);
+		}
+		direction = Quaternion.LookRotation (currTarget - transform.position);
+		//transform.rotation = direction;
+		transform.rotation = Quaternion.Slerp (transform.rotation, direction, Time.deltaTime * moveSpeed);
 	}
 	//Calculates a new direction to look in based on scanRadius. Updates every 0.1s.
 	IEnumerator ScanRadius ()
 	{
 		float disposition = Random.Range (-scanRadius, scanRadius);
-		tempPos = transform.position + transform.forward + (transform.right * disposition);
+		tempPos = transform.position + (transform.forward * sight) + (transform.right * disposition);
 	//	Instantiate (GameObject.CreatePrimitive (PrimitiveType.Cube), tempPos, Quaternion.identity);
 		Vector3 direction = tempPos - transform.position;
 		ray = new Ray (transform.position, direction);

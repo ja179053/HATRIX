@@ -11,6 +11,12 @@ namespace Actor
 		static EndJump ejump;
 
 		void Start(){
+			pcMode = !Application.isMobilePlatform;
+			if (!pcMode) {
+				Application.runInBackground = false;
+				Screen.autorotateToLandscapeLeft = true;
+			}
+			Debug.Log (pcMode);
 			nma = GetComponent<NavMeshAgent> ();
 			//chCo = GetComponentInParent<CharacterController> ();
 			anim = GetComponentInChildren<Animator> ();
