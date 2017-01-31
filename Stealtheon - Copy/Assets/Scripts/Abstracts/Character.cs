@@ -4,14 +4,14 @@
 public abstract class Character : MonoBehaviour
 {
 	//Accessor to the NavMeshAgent
-	protected NavMeshAgent nma;
+	protected UnityEngine.AI.NavMeshAgent nma;
 	//Character movespeed;
 	public float moveSpeed = 1;
 
 	//Sets the NavMeshAgent
 	protected void CharacterSettings ()
 	{
-		nma = GetComponent<NavMeshAgent> ();
+		nma = GetComponent<UnityEngine.AI.NavMeshAgent> ();
 		if(nma != null){
 		SetNMASpeed (moveSpeed);
 		}

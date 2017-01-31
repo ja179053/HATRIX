@@ -10,14 +10,14 @@ public class FollowScript : MonoBehaviour
 	Transform myPos, currFollowTarget;
 	public float cameraSpeed = 1, extraDistance = 0;
 	public Vector3 extra;
-	NavMeshAgent nma;
+	UnityEngine.AI.NavMeshAgent nma;
 	public bool x = true, y = true, z = true;
 
 	void Start ()
 	{
 		actors = GameObject.FindGameObjectsWithTag ("Player");
-		if (GetComponent <NavMeshAgent> () != null) {
-			nma = GetComponent<NavMeshAgent> ();
+		if (GetComponent <UnityEngine.AI.NavMeshAgent> () != null) {
+			nma = GetComponent<UnityEngine.AI.NavMeshAgent> ();
 		}
 		for (int i = 0; i < actors.Length; i++) {
 			if (actors [i] != null) {
