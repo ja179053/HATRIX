@@ -7,7 +7,7 @@ namespace Actor
 	{
 		//CharacterController chCo;
 		protected Animator anim;
-		protected static UnityEngine.AI.NavMeshAgent nma;
+		protected static NavMeshAgent nma;
 		public bool grounded, jumping;
 		public bool move2DOnly;
 		public static GameObject metamorphosis;

@@ -3,7 +3,7 @@ using System.Collections;
 namespace Actor{
 public class EndJump : MonoBehaviour {
 
-		public IEnumerator Jump(UnityEngine.AI.OffMeshLink oml, bool b, bool jumping = true){
+		public IEnumerator Jump(OffMeshLink oml, bool b, bool jumping = true){
 		if (jumping) {
 			if (b) {
 					ActorMovement.Teleport (oml.endTransform.position + Vector3.forward);

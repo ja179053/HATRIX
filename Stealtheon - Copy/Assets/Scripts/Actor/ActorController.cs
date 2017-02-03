@@ -17,7 +17,7 @@ namespace Actor
 				Screen.autorotateToLandscapeLeft = true;
 			}
 			Debug.Log (pcMode);
-			nma = GetComponent<UnityEngine.AI.NavMeshAgent> ();
+			nma = GetComponent<NavMeshAgent> ();
 			//chCo = GetComponentInParent<CharacterController> ();
 			anim = GetComponentInChildren<Animator> ();
 			ejump = GetComponentInChildren<EndJump> ();
@@ -32,7 +32,7 @@ namespace Actor
 		{
 			if (ActorMovement.canInput && c.gameObject.tag == "Teleporter") {
 				//	SetTeleport (c.transform.parent.transform.position);-
-				StartCoroutine(ejump.Jump(c.gameObject.GetComponent<UnityEngine.AI.OffMeshLink> (), c.transform == c.gameObject.GetComponent<UnityEngine.AI.OffMeshLink> ().transform));
+				StartCoroutine(ejump.Jump(c.gameObject.GetComponent<OffMeshLink> (), c.transform == c.gameObject.GetComponent<OffMeshLink> ().transform));
 			} else if (!ActorMovement.canInput && c.gameObject.tag == "Teletarget") {	
 						StartCoroutine(ejump.Jump (null, false, false));	
 			} else if (c.gameObject.tag == "Cage switch") {
