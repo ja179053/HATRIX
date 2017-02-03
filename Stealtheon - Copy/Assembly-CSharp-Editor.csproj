@@ -85,7 +85,7 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TreeEditor/Editor/UnityEditor.TreeEditor.dll</HintPath>
  </Reference>
  <Reference Include="System.Windows.Forms">
- <HintPath>D:/HATRIX/Stealtheon - Copy/Assets/System.Windows.Forms.dll</HintPath>
+ <HintPath>D:/Hatrix/HATRIX/Stealtheon - Copy/Assets/System.Windows.Forms.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
