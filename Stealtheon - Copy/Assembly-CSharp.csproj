@@ -45,6 +45,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Other\AnimatorScript.cs" />
+     <Compile Include="Assets\Other\SendPlayerBoxMessage.cs" />
+     <Compile Include="Assets\Other\finishdemo.cs" />
+     <Compile Include="Assets\Other\getkey.cs" />
+     <Compile Include="Assets\Other\lanesmove.cs" />
+     <Compile Include="Assets\Other\lockedrabbit.cs" />
+     <Compile Include="Assets\Other\nextlevel.cs" />
+     <Compile Include="Assets\Other\sandbag.cs" />
+     <Compile Include="Assets\Other\sangbagtriggerscript.cs" />
+     <Compile Include="Assets\Other\staircase.cs" />
+     <Compile Include="Assets\Other\trans1.cs" />
+     <Compile Include="Assets\Other\zigzagcode.cs" />
      <Compile Include="Assets\Scripts\AI\CameraZoom.cs" />
      <Compile Include="Assets\Scripts\AI\EnemyLook.cs" />
      <Compile Include="Assets\Scripts\AI\FollowScript.cs" />
@@ -77,18 +89,17 @@
      <Compile Include="Assets\Scripts\Tools\Instantiator.cs" />
      <Compile Include="Assets\Scripts\Tools\LookAtScript.cs" />
      <Compile Include="Assets\Scripts\Tools\PlayAnimation.cs" />
+     <Compile Include="Assets\Scripts\Tools\Sound\Delay.cs" />
      <Compile Include="Assets\Scripts\Tools\Sound\PlayTrigger.cs" />
      <Compile Include="Assets\Scripts\Tools\roratelights2.cs" />
      <Compile Include="Assets\Scripts\Tools\rotateLights1.cs" />
      <Compile Include="Assets\Scripts\Zac Random\Middle.cs" />
      <Compile Include="Assets\Scripts\Zac Random\Mirror.cs" />
      <Compile Include="Assets\Scripts\Zac Random\P1Movement.cs" />
+     <Compile Include="Assets\Scripts\Zac Random\P2movement.cs" />
      <Compile Include="Assets\Scripts\Zac Random\buttonscript.cs" />
      <Compile Include="Assets\Scripts\Zac Random\moveth9is.cs" />
-     <Compile Include="Assets\Scripts\Zac Random\transition1.cs" />
-     <Compile Include="Assets\Scripts\Zac Random\transition2.cs" />
-     <Compile Include="Assets\Scripts\Zac Random\transition3.cs" />
-     <Compile Include="Assets\Scripts\Zac Random\transitionCode.cs" />
+     <Compile Include="Assets\Scripts\transition1.cs" />
      <None Include="Assets\Scripts\Shaders\MirrorEffectS.shader" />
      <None Include="Assets\Scripts\Shaders\MagicShader3.shader" />
      <None Include="Assets\Scripts\Shaders\TextureSpin.shader" />

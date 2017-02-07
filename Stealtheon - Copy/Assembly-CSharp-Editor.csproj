@@ -45,7 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
+     <Compile Include="Assets\Art\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
      <None Include="Assets\Scripts\Shaders\MirrorEffectS.shader" />
      <None Include="Assets\Scripts\Shaders\MagicShader3.shader" />
      <None Include="Assets\Scripts\Shaders\TextureSpin.shader" />
