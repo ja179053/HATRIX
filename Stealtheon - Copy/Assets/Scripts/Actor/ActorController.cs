@@ -36,7 +36,8 @@ namespace Actor
 				OffMeshLink oml = c.GetComponent<OffMeshLink>();
 				StartCoroutine(ejump.Jump(oml, c.transform == oml.transform));
 			} else if (!ActorMovement.canInput && c.gameObject.tag == "Teletarget") {	
-						StartCoroutine(ejump.Jump (null, false, false));	
+				OffMeshLink oml = c.GetComponent<OffMeshLink>();
+				StartCoroutine(ejump.Jump (oml, !(c.transform == oml.transform)));	
 			} else if (c.gameObject.tag == "Cage switch") {
 				c.GetComponent<Animation> ().Play ();
 				CageSwitch ();
