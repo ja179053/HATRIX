@@ -13,6 +13,8 @@ namespace Actor
 		public static GameObject metamorphosis;
 		public static Vector3 currentPos;
 		protected static bool pcMode;
+		static bool debug;
+		public GameObject g;
 		//Sets nma destination according to inputs.
 		static int movementType;
 
@@ -80,6 +82,7 @@ namespace Actor
 			if (nma != null) {
 				if (newPos != transform.position) {
 					nma.SetDestination ((newPos * 0.5f) + transform.position);
+				//	Instantiate (g, (newPos * 0.5f) + transform.position, Quaternion.identity);
 				}
 			}/* else if (grounded) {
 				chCo.Move (newPos * Time.deltaTime);
@@ -99,13 +102,15 @@ namespace Actor
 
 		public static void Teleport (Vector3 v, bool warp = false)
 		{
+			canInput = false;
+			debug = true;
 			if (warp) {			
 				nma.Warp (v);
+				canInput = true;
 				return;
 			}
-			canInput = false;
 			if (currentPos != v) {	
-				if (nma != null) {		
+				if (nma != null) {	
 					nma.SetDestination (v);
 				}
 			} else {
