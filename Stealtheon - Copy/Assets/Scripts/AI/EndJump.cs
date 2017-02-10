@@ -16,6 +16,7 @@ namespace Actor
 				} else {
 					ActorMovement.Teleport (oml.startTransform.position + Vector3.forward);
 				}
+				Debug.Log (oml.gameObject.name);
 			} else {
 				ActorMovement.canInput = true;
 			}

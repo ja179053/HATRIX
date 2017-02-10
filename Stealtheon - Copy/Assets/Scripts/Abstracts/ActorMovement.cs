@@ -104,6 +104,7 @@ namespace Actor
 		{
 			canInput = false;
 			debug = true;
+			Debug.Log ("teleporting");
 			if (warp) {			
 				nma.Warp (v);
 				canInput = true;

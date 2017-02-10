@@ -32,7 +32,8 @@ namespace Actor
 		{
 			if (ActorMovement.canInput && c.gameObject.tag == "Teleporter") {
 				//	SetTeleport (c.transform.parent.transform.position);-
-				StartCoroutine(ejump.Jump(c.gameObject.GetComponent<OffMeshLink> (), c.transform == c.gameObject.GetComponent<OffMeshLink> ().transform));
+				OffMeshLink oml = c.GetComponent<OffMeshLink>();
+				StartCoroutine(ejump.Jump(oml, c.transform == oml.transform));
 			} else if (!ActorMovement.canInput && c.gameObject.tag == "Teletarget") {	
 						StartCoroutine(ejump.Jump (null, false, false));	
 			} else if (c.gameObject.tag == "Cage switch") {
