@@ -32,6 +32,7 @@ namespace Actor
 		{
 			if (ActorMovement.canInput && c.gameObject.tag == "Teleporter") {
 				//	SetTeleport (c.transform.parent.transform.position);-
+				canInput = false;
 				OffMeshLink oml = c.GetComponent<OffMeshLink>();
 				StartCoroutine(ejump.Jump(oml, c.transform == oml.transform));
 			} else if (!ActorMovement.canInput && c.gameObject.tag == "Teletarget") {	

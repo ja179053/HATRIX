@@ -102,17 +102,18 @@ namespace Actor
 
 		public static void Teleport (Vector3 v, bool warp = false)
 		{
-			canInput = false;
 			debug = true;
 			Debug.Log ("teleporting");
-			if (warp) {			
+			if (warp) {		
 				nma.Warp (v);
 				canInput = true;
+				Debug.Log ("warping");
 				return;
 			}
-			if (currentPos != v) {	
+			if (currentPos != v) {
 				if (nma != null) {	
 					nma.SetDestination (v);
+					Debug.Log ("destination set");
 				}
 			} else {
 				canInput = true;

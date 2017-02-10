@@ -33,7 +33,7 @@ namespace Actor
 			if (preteleport) {
 				metamorphosis.transform.position = ActorMovement.currentPos;
 			} else {
-				ActorMovement.Teleport (metamorphosis.transform.position);
+				ActorMovement.Teleport (metamorphosis.transform.position, true);
 			}
 		}
 
