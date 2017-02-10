@@ -3,37 +3,38 @@ using System.Collections;
 
 public class CameraZoom : MonoBehaviour
 {
-	public bool zoom, zooming;
-	public float zoomDist, normalDist, zoomSpeed;
-	float targetZoom;
-	float Targetzoom {
-		get {
-			return targetZoom;
+	public static bool zoom, zooming;
+	public static int zoomDist = 2, normalDist = 8, zoomSpeed = 1;
+
+	static int TargetZoom ()
+	{
+		if (zooming) {
+			if (zoom) {
+				return zoomDist;
+			} else {
+				return normalDist;
+			}
 		}
-		set {
-			targetZoom = value;
-			zooming = true;
-		}
+		return Mathf.RoundToInt(Camera.main.orthographicSize);
 	}
 	// Update is called once per frame
 	void Update ()
 	{
-		if (zoom) {
-			targetZoom = zoomDist;
-		} else {
-			targetZoom = normalDist;
-		}
-		if (zooming) {
-			Zoom ();
+		if (Input.GetKeyDown (KeyCode.Z) || zooming) {
+			Zoom (!zoom);
 		}
 	}
 
-	void Zoom ()
+	public static void Zoom (bool b)
 	{
-		zooming = true;
-		Camera.main.orthographicSize = Mathf.Lerp (Camera.main.orthographicSize, targetZoom, Time.deltaTime * zoomSpeed);
-		if (Camera.main.orthographicSize == Targetzoom) {
-			zooming = false;
+		if (zoom != b) {
+			if (!zooming) {
+				zoom = b;
+				zooming = true;
+			}
+			zooming = (!(Mathf.RoundToInt(Camera.main.orthographicSize) == TargetZoom ()));
 		}
+		//	Camera.main.orthographicSize = TargetZoom ();
+		Camera.main.orthographicSize = Mathf.Lerp (Camera.main.orthographicSize, TargetZoom (), Time.deltaTime * zoomSpeed);
 	}
 }
