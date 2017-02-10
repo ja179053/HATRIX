@@ -51,7 +51,6 @@
      <Compile Include="Assets\Other\finishdemo.cs" />
      <Compile Include="Assets\Other\getkey.cs" />
      <Compile Include="Assets\Other\lanesmove.cs" />
-     <Compile Include="Assets\Other\lockedrabbit.cs" />
      <Compile Include="Assets\Other\nextlevel.cs" />
      <Compile Include="Assets\Other\sandbag.cs" />
      <Compile Include="Assets\Other\sangbagtriggerscript.cs" />
@@ -81,6 +80,9 @@
      <Compile Include="Assets\Scripts\Manager\GameManager.cs" />
      <Compile Include="Assets\Scripts\Manager\SoundManager.cs" />
      <Compile Include="Assets\Scripts\Manager\Title.cs" />
+     <Compile Include="Assets\Scripts\Puzzles\BronzeKey.cs" />
+     <Compile Include="Assets\Scripts\Puzzles\Key.cs" />
+     <Compile Include="Assets\Scripts\Puzzles\LockedRabbit.cs" />
      <Compile Include="Assets\Scripts\Puzzles\MirrorPuzzle.cs" />
      <Compile Include="Assets\Scripts\Puzzles\MoveOnConveyor.cs" />
      <Compile Include="Assets\Scripts\Puzzles\NextLevelTrigger.cs" />
