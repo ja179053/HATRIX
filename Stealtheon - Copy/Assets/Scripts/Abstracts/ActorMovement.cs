@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 namespace Actor
 {
@@ -14,7 +15,7 @@ namespace Actor
 		public static Vector3 currentPos;
 		protected static bool pcMode;
 		static bool debug;
-		public GameObject g;
+		public GameObject debugger;
 		//Sets nma destination according to inputs.
 		static int movementType;
 
@@ -104,12 +105,13 @@ namespace Actor
 		{
 			debug = true;
 			Debug.Log ("teleporting");
-			if (warp) {		
+		//	if (warp) {		
 				nma.Warp (v);
 				canInput = true;
 				Debug.Log ("warping");
 				return;
-			}
+		//	}
+			//AI is not running the jump movement
 			if (currentPos != v) {
 				if (nma != null) {	
 					nma.SetDestination (v);
