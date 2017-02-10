@@ -17,13 +17,17 @@ public class EnemyLook : EnemyMove
 	{
 		CharacterSettings ();
 		direction = new Quaternion ();
-		if (patrolPoints.Length < 2) {
-			wander = true;
-		}
+	//	if (patrolPoints.Length < 2) {
+	//		wander = true;
+	//	}
 		if (wander) {
 		} else {
-			LookForward ();
-			NewTarget (patrolPoints [currPatrolPoint]);
+			if (patrolPoints.Length != 0) {
+				LookForward ();
+				NewTarget (patrolPoints [currPatrolPoint]);
+			} else {
+				NewTarget (currTarget);
+			}
 		}
 		if (scanRadius > 0) {
 			StartCoroutine (ScanRadius ());
@@ -44,9 +48,9 @@ public class EnemyLook : EnemyMove
 			} 
 		}
 		if (shouldMove) {
-			transform.position = Vector3.MoveTowards (transform.position, currTarget, Time.deltaTime * moveSpeed);
+			transform.position = Vector3.MoveTowards (transform.position, currTarget.position, Time.deltaTime * moveSpeed);
 		}
-		direction = Quaternion.LookRotation (currTarget - transform.position);
+		direction = Quaternion.LookRotation (currTarget.position - transform.position);
 		//transform.rotation = direction;
 		transform.rotation = Quaternion.Slerp (transform.rotation, direction, Time.deltaTime * moveSpeed);
 	}

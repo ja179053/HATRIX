@@ -45,7 +45,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\IdleB.cs" />
      <Compile Include="Assets\Other\AnimatorScript.cs" />
      <Compile Include="Assets\Other\SendPlayerBoxMessage.cs" />
      <Compile Include="Assets\Other\finishdemo.cs" />
@@ -57,9 +56,12 @@
      <Compile Include="Assets\Other\staircase.cs" />
      <Compile Include="Assets\Other\trans1.cs" />
      <Compile Include="Assets\Other\zigzagcode.cs" />
+     <Compile Include="Assets\ResetIdle.cs" />
      <Compile Include="Assets\Scripts\AI\CameraZoom.cs" />
+     <Compile Include="Assets\Scripts\AI\EndJump.cs" />
      <Compile Include="Assets\Scripts\AI\EnemyLook.cs" />
      <Compile Include="Assets\Scripts\AI\FollowScript.cs" />
+     <Compile Include="Assets\Scripts\AI\IdleB.cs" />
      <Compile Include="Assets\Scripts\Abstracts\ActorMovement.cs" />
      <Compile Include="Assets\Scripts\Abstracts\Character.cs" />
      <Compile Include="Assets\Scripts\Abstracts\EnemyMove.cs" />
@@ -76,7 +78,6 @@
      <Compile Include="Assets\Scripts\Actor\SimpleCharcterMovement.cs" />
      <Compile Include="Assets\Scripts\Attributes\AuthorAttribute.cs" />
      <Compile Include="Assets\Scripts\BackgroundPainter.cs" />
-     <Compile Include="Assets\Scripts\EndJump.cs" />
      <Compile Include="Assets\Scripts\Manager\GameManager.cs" />
      <Compile Include="Assets\Scripts\Manager\SoundManager.cs" />
      <Compile Include="Assets\Scripts\Manager\Title.cs" />
@@ -87,6 +88,7 @@
      <Compile Include="Assets\Scripts\Puzzles\MoveOnConveyor.cs" />
      <Compile Include="Assets\Scripts\Puzzles\NextLevelTrigger.cs" />
      <Compile Include="Assets\Scripts\Puzzles\ReleaseButton.cs" />
+     <Compile Include="Assets\Scripts\Puzzles\SandbagActivator.cs" />
      <Compile Include="Assets\Scripts\Shaders\MirrorEffect.cs" />
      <Compile Include="Assets\Scripts\Shaders\Monochrome.cs" />
      <Compile Include="Assets\Scripts\Tools\Background.cs" />

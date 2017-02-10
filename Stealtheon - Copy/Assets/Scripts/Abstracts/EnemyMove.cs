@@ -7,7 +7,7 @@ public abstract class EnemyMove : Character
 	//When this object collides with a patrol point, the patrol point is updated.
 	public Transform[] patrolPoints;
 	//The current target is monitored here.
-	public Vector3 currTarget;
+	public Transform currTarget;
 	//The point in patrolPoints is measured with this int.
 	protected int currPatrolPoint = 0;
 	//Whether the AI wanders or patrols.
@@ -16,12 +16,13 @@ public abstract class EnemyMove : Character
 	//Updates the current target in script and NavMeshAgent
 	protected void NewTarget (Transform target)
 	{
-		currTarget = target.position;
+		currTarget = target;
 		if (nma != null) {
-			nma.SetDestination (currTarget);
+			nma.SetDestination (currTarget.position);
+		//	Debug.Log(currTarget.name);
 		} else {
 			BoxCollider bc = target.GetComponent<BoxCollider> ();
-			currTarget += bc.center + (bc.size / 2);
+			currTarget.position += bc.center + (bc.size / 2);
 			shouldMove = true;
 		//	LookForward ();	
 		}
