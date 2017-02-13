@@ -29,6 +29,7 @@ public class Title : Singleton<Title>
 			Quit ();
 		} else if (Input.anyKeyDown) {
 			StartCoroutine(NewLevel (4));
+			StartCoroutine (LoadingScreen.AsynchronousLoad (currentLevel,4));
 		}
 	}
 	//Either advances or resets to title screen (Can be adapted for level selection).
@@ -42,7 +43,6 @@ public class Title : Singleton<Title>
 			currentLevel = 0;
 		}
 		SceneManager.LoadScene (currentLevel);
-
 	}
 
 	public void Quit ()
