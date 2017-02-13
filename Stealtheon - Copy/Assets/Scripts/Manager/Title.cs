@@ -42,6 +42,7 @@ public class Title : Singleton<Title>
 			currentLevel = 0;
 		}
 		SceneManager.LoadScene (currentLevel);
+
 	}
 
 	public void Quit ()
