@@ -27,7 +27,7 @@ public class BackgroundPainter : MonoBehaviour {
 		}
 		System.Drawing.Graphics g = System.Drawing.Graphics.FromImage (i);
 		g.FillRectangle (testBrush, new System.Drawing.Rectangle (0, 0, i.Width, i.Height));
-		i.Save (Application.persistentDataPath + "/ComputerGeneratedImage", System.Drawing.Imaging.ImageFormat.Jpeg);
+		i.Save ("D://ComputerGeneratedImage", System.Drawing.Imaging.ImageFormat.Jpeg);
 		i.Dispose ();
 		g.Dispose ();
 	}
