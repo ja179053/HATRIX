@@ -56,11 +56,14 @@
      <Compile Include="Assets\Other\staircase.cs" />
      <Compile Include="Assets\Other\trans1.cs" />
      <Compile Include="Assets\Other\zigzagcode.cs" />
+     <Compile Include="Assets\Scripts\AI\BackgroundPainter.cs" />
+     <Compile Include="Assets\Scripts\AI\Behaviours\EndJump.cs" />
+     <Compile Include="Assets\Scripts\AI\Behaviours\IdleB.cs" />
+     <Compile Include="Assets\Scripts\AI\Behaviours\ResetIdle.cs" />
      <Compile Include="Assets\Scripts\AI\CameraZoom.cs" />
-     <Compile Include="Assets\Scripts\AI\EndJump.cs" />
      <Compile Include="Assets\Scripts\AI\EnemyLook.cs" />
      <Compile Include="Assets\Scripts\AI\FollowScript.cs" />
-     <Compile Include="Assets\Scripts\AI\IdleB.cs" />
+     <Compile Include="Assets\Scripts\AI\transition1.cs" />
      <Compile Include="Assets\Scripts\Abstracts\ActorMovement.cs" />
      <Compile Include="Assets\Scripts\Abstracts\Character.cs" />
      <Compile Include="Assets\Scripts\Abstracts\EnemyMove.cs" />
@@ -76,9 +79,8 @@
      <Compile Include="Assets\Scripts\Actor\Mechanics\Metamorphosis.cs" />
      <Compile Include="Assets\Scripts\Actor\SimpleCharcterMovement.cs" />
      <Compile Include="Assets\Scripts\Attributes\AuthorAttribute.cs" />
-     <Compile Include="Assets\Scripts\BackgroundPainter.cs" />
-     <Compile Include="Assets\Scripts\LoadingScreen.cs" />
      <Compile Include="Assets\Scripts\Manager\GameManager.cs" />
+     <Compile Include="Assets\Scripts\Manager\LoadingScreen.cs" />
      <Compile Include="Assets\Scripts\Manager\SoundManager.cs" />
      <Compile Include="Assets\Scripts\Manager\Title.cs" />
      <Compile Include="Assets\Scripts\Puzzles\BronzeKey.cs" />
@@ -89,7 +91,6 @@
      <Compile Include="Assets\Scripts\Puzzles\NextLevelTrigger.cs" />
      <Compile Include="Assets\Scripts\Puzzles\ReleaseButton.cs" />
      <Compile Include="Assets\Scripts\Puzzles\SandbagActivator.cs" />
-     <Compile Include="Assets\Scripts\ResetIdle.cs" />
      <Compile Include="Assets\Scripts\Shaders\MirrorEffect.cs" />
      <Compile Include="Assets\Scripts\Shaders\Monochrome.cs" />
      <Compile Include="Assets\Scripts\Tools\Background.cs" />
@@ -106,7 +107,6 @@
      <Compile Include="Assets\Scripts\Zac Random\P2movement.cs" />
      <Compile Include="Assets\Scripts\Zac Random\buttonscript.cs" />
      <Compile Include="Assets\Scripts\Zac Random\moveth9is.cs" />
-     <Compile Include="Assets\Scripts\transition1.cs" />
      <None Include="Assets\Scripts\Shaders\MirrorEffectS.shader" />
      <None Include="Assets\Scripts\Shaders\MagicShader3.shader" />
      <None Include="Assets\Scripts\Shaders\TextureSpin.shader" />
