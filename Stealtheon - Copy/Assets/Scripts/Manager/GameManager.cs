@@ -18,7 +18,7 @@ public class GameManager : Title
 			} else {
 				Time.timeScale = 1;
 			}
-			sa.PauseSound (paused);
+			sa.StartCoroutine(sa.PauseSound(paused));
 		}
 	}
 

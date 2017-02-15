@@ -13,7 +13,7 @@ namespace Actor
 		public bool move2DOnly;
 		public static GameObject metamorphosis;
 		public static Vector3 currentPos;
-		protected static bool pcMode;
+		public static bool pcMode;
 		static bool debug;
 		public GameObject debugger;
 		//Sets nma destination according to inputs.
@@ -54,7 +54,7 @@ namespace Actor
 			} else {
 				h = (Input.GetTouch (0).position.x - (Screen.width / 2)) / Screen.width;
 				if (!move2DOnly) {
-					v = (Input.GetTouch (0).position.y - (Screen.height / 2)) / Screen.height;
+					v = -(Input.GetTouch (0).position.y - (Screen.height / 2)) / Screen.height;
 				}
 			}
 			bool noInput = (h == 0 && v == 0) ? true : false;

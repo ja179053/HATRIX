@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Audio;
+using System.Collections;
 
 [AuthorAttribute ("JJ", TeamRole.Programmer)]
 public class SoundManager : Singleton<SoundManager>
@@ -26,8 +27,9 @@ public class SoundManager : Singleton<SoundManager>
 		aso.Play ();
 	}
 
-	public void PauseSound (bool pause)
+	public IEnumerator PauseSound (bool pause)
 	{
+		yield return new WaitForSeconds (1);
 		foreach (AudioSource a in sounds) {
 			if (a != aso) {
 				if (pause) {

@@ -21,6 +21,13 @@ public class Title : Singleton<Title>
 		activeButtons = FindObjectsOfType<Button> ();
 		optionsMenu = GameObject.Find ("Options Menu");
 		icon = buttonIcon;
+		Actor.ActorMovement.pcMode = !Application.isMobilePlatform;
+		if (!Actor.ActorMovement.pcMode) {
+			Application.runInBackground = false;
+			Screen.autorotateToPortrait = false;
+			Screen.autorotateToPortraitUpsideDown = false;
+			Screen.autorotateToLandscapeLeft = true;
+		}
 	}
 	static Button[] defaultButtons;
 	void Update ()

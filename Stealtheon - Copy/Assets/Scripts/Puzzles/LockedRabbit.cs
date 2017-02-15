@@ -7,30 +7,21 @@ public class LockedRabbit : MonoBehaviour
 {
 
 	public static bool key = false;
-	public GameObject thelock, goldKey;
+	public GameObject goldKey, thelock = null;
 
 	void OnCollisionStay (Collision Other)
 	{
 	//	Debug.Log (Other.gameObject.name);
 	//	if (key && Input.GetKey (KeyCode.E)) { 
 		if (thelock) {
-			if (Other.gameObject.tag == "Player") {
+			if (key && Other.gameObject.tag == "Player") {
+				this.gameObject.GetComponent<Rigidbody> ().isKinematic = false;
 				key = false;
 				Destroy (thelock);
 				Instantiate (goldKey, transform.position + transform.up + transform.forward, Quaternion.identity);
 			}
 		}
 	//	}
-	}
-	void OnTriggerStay (Collider Other)
-	{
-	//	Debug.Log (Other.gameObject.name);
-		//	if (key && Input.GetKey (KeyCode.E)) { 
-		if (Other.gameObject.tag == "Player") {
-			thelock.SetActive (false);
-			Instantiate (goldKey, transform.position + transform.forward + transform.up, Quaternion.identity);
-		}
-		//	}
 	}
 
 }
