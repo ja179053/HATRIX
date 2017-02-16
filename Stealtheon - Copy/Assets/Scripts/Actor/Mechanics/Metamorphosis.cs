@@ -19,8 +19,17 @@ namespace Actor
 		void Start ()
 		{
 			ps = GetComponentInChildren<ParticleSystem> ();
-			metamorphosis = GameObject.Find ("Metamorphosis box");
-			smoke = GameObject.Find ("Smoke").GetComponent<ParticleSystem> ();
+			bool found = true;
+			found = (metamorphosis = GameObject.Find ("Metamorphosis box"));
+			if (!found) {
+				Debug.LogError ("Drag the metamorphosis and smoke prefabs into the scene");
+				return;
+			}
+				found = (smoke = GameObject.Find ("Smoke").GetComponent<ParticleSystem> ());
+			if (!found) {
+				Debug.LogError ("Drag the metamorphosis and smoke prefabs into the scene");
+				return;
+			}
 			if (smoke != null) {//Will not work with errors
 				StartCoroutine (ActivateSmoke ());
 			}

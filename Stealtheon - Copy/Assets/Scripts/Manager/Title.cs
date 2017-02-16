@@ -34,6 +34,7 @@ public class Title : Singleton<Title>
 		optionsMenu = GameObject.Find ("Options Menu");
 		icon = buttonIcon;
 		Actor.ActorMovement.pcMode = !Application.isMobilePlatform;
+		Debug.Log ("Working");
 		if (!Actor.ActorMovement.pcMode) {
 			Application.runInBackground = false;
 			Screen.autorotateToPortrait = false;

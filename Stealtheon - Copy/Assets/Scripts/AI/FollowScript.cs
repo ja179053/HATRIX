@@ -89,6 +89,8 @@ public class FollowScript : MonoBehaviour
 						j = i;
 					}
 				}
+			} else {
+				return 0;
 			}
 		}
 		if (zeroTransform == targets && gameObject.tag == "MainCamera") {
