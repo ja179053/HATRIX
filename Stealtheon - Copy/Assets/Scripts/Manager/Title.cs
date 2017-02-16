@@ -7,11 +7,23 @@ using System.Collections;
 public class Title : Singleton<Title>
 {
 	protected Title(){}
-	
+	enum TitleState{
+		Main,
+		Levels
+		}
+	TitleState ts;
 	GameObject optionsMenu;
 	protected static int currentLevel = 0;
 	void Start(){
 		currentLevel = 0;
+		ts = TitleState.Main;
+		if (lastLevel == null) {
+			try{
+				lastLevel = PlayerPrefs.GetInt("LastLevel");
+			} catch {
+				GameObject.Find ("ContinueButton").SetActive (false);
+			}
+		}
 		ManagerSettings ();
 	}
 	protected static SoundManager sa;
@@ -34,19 +46,30 @@ public class Title : Singleton<Title>
 	{
 		if (Input.GetKey (KeyCode.Escape)) {
 			Quit ();
-		} else if (Input.anyKeyDown) {
-			StartCoroutine(NewLevel (4));
-			StartCoroutine (LoadingScreen.AsynchronousLoad (currentLevel,4));
+		} else if (!Input.GetMouseButton (0)) {
+			if (Input.anyKeyDown) {
+				LoadNewLevel (4);
+			}
 		}
 	}
+	public void LoadNewLevel(float waitTime = 0){
+		StartCoroutine(NewLevel (waitTime));
+		StartCoroutine (LoadingScreen.AsynchronousLoad (currentLevel,4));
+	}
+	int lastLevel;
+	public void Continue(){
+		StartCoroutine(NewLevel(4, lastLevel));
+	}
 	//Either advances or resets to title screen (Can be adapted for level selection).
-	public static IEnumerator NewLevel (float waitTime = 0, bool nextLevel = true)
+	public static IEnumerator NewLevel (float waitTime = 0, int nextLevel = -1)
 	{
 		SoundManager.PlaySource (true);
 		yield return new WaitForSeconds (waitTime);
-		if (nextLevel && ((currentLevel + 1) < SceneManager.sceneCountInBuildSettings)) {
+		if ((nextLevel == -1) && ((currentLevel + 1) < SceneManager.sceneCountInBuildSettings)) {
 			currentLevel = currentLevel + 1;
-		} else {
+		} else if (nextLevel != -1){
+			currentLevel = nextLevel;
+			} else {
 			currentLevel = 0;
 		}
 		SceneManager.LoadScene (currentLevel);
@@ -54,6 +77,7 @@ public class Title : Singleton<Title>
 
 	public void Quit ()
 	{
+		PlayerPrefs.SetInt("LastLevel", SceneManager.GetActiveScene().buildIndex);
 		Debug.Break ();
 		Application.Quit ();
 	}
@@ -75,6 +99,7 @@ public class Title : Singleton<Title>
 			}
 		}
 	}
+	//Only to be used for the options menu. (in-game).
 	static IEnumerator UpdateIcon ()
 	{
 		yield return new WaitForSeconds (0.001f);

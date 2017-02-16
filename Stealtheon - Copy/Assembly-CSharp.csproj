@@ -81,6 +81,7 @@
      <Compile Include="Assets\Scripts\Manager\GameManager.cs" />
      <Compile Include="Assets\Scripts\Manager\LoadingScreen.cs" />
      <Compile Include="Assets\Scripts\Manager\SoundManager.cs" />
+     <Compile Include="Assets\Scripts\Manager\SwapButtons.cs" />
      <Compile Include="Assets\Scripts\Manager\Title.cs" />
      <Compile Include="Assets\Scripts\Puzzles\BronzeKey.cs" />
      <Compile Include="Assets\Scripts\Puzzles\Key.cs" />
