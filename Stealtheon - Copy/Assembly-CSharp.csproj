@@ -83,6 +83,8 @@
      <Compile Include="Assets\Scripts\Manager\SoundManager.cs" />
      <Compile Include="Assets\Scripts\Manager\SwapButtons.cs" />
      <Compile Include="Assets\Scripts\Manager\Title.cs" />
+     <Compile Include="Assets\Scripts\Minigames\Cups\Cup.cs" />
+     <Compile Include="Assets\Scripts\Minigames\Cups\CupsGame.cs" />
      <Compile Include="Assets\Scripts\Puzzles\BronzeKey.cs" />
      <Compile Include="Assets\Scripts\Puzzles\Key.cs" />
      <Compile Include="Assets\Scripts\Puzzles\LockedRabbit.cs" />
