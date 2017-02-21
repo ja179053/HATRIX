@@ -34,7 +34,7 @@ public class Title : Singleton<Title>
 		optionsMenu = GameObject.Find ("Options Menu");
 		icon = buttonIcon;
 		Actor.ActorMovement.pcMode = !Application.isMobilePlatform;
-		Debug.Log ("Working");
+	//	Debug.Log ("Working");
 		if (!Actor.ActorMovement.pcMode) {
 			Application.runInBackground = false;
 			Screen.autorotateToPortrait = false;
@@ -54,26 +54,49 @@ public class Title : Singleton<Title>
 		}
 	}
 	public void LoadNewLevel(float waitTime = 0){
-		StartCoroutine(NewLevel (waitTime));
-		StartCoroutine (LoadingScreen.AsynchronousLoad (currentLevel,4));
+		StartCoroutine (NewLevel (waitTime, -1));
 	}
 	int lastLevel;
 	public void Continue(){
 		StartCoroutine(NewLevel(4, lastLevel));
 	}
 	//Either advances or resets to title screen (Can be adapted for level selection).
-	public static IEnumerator NewLevel (float waitTime = 0, int nextLevel = -1)
+	public static IEnumerator NewLevel (float waitTime = 0, int nextLevel = -1, string s = "")
 	{
 		SoundManager.PlaySource (true);
-		yield return new WaitForSeconds (waitTime);
-		if ((nextLevel == -1) && ((currentLevel + 1) < SceneManager.sceneCountInBuildSettings)) {
-			currentLevel = currentLevel + 1;
-		} else if (nextLevel != -1){
-			currentLevel = nextLevel;
+		if (s == "") {
+			if ((nextLevel == -1) && ((currentLevel + 1) < SceneManager.sceneCountInBuildSettings)) {
+				currentLevel = currentLevel + 1;
+			} else if (nextLevel != -1) {
+				currentLevel = nextLevel;
 			} else {
-			currentLevel = 0;
+				currentLevel = 0;
+			}
+		} /*else {
+		//	currentLevel = SceneManager.GetSceneByName (s).buildIndex;
+			Scene c = SceneManager.GetSceneByName ("mysticlevel");
+			currentLevel = c.buildIndex;
+
+			if (!c.IsValid ()) {
+				Debug.Log (SceneManager.sceneCountInBuildSettings);
+				currentLevel = SceneManager.sceneCountInBuildSettings - 1;
+				Scene d = SceneManager.get (currentLevel);
+				Debug.Log(d.name);
+			}
+			if (c != null) {
+				Debug.Log (c.IsValid());
+			} else {
+				Debug.LogError ("scene is null");
+			}
+		}*/
+		//Debug.Log (SceneManager.GetActiveScene ().name);//(currentLevel));
+		Instance.StartCoroutine (LoadingScreen.AsynchronousLoad (currentLevel,waitTime));
+		yield return new WaitForSeconds (waitTime);
+		if (s == "") {
+			SceneManager.LoadScene (currentLevel);
+		} else {
+			SceneManager.LoadScene (s);
 		}
-		SceneManager.LoadScene (currentLevel);
 	}
 
 	public void Quit ()

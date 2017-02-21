@@ -3,8 +3,8 @@ using System.Collections;
 
 public class CupsGame : Singleton<CupsGame> {
 	public static Cup[] cups;
-	public static int ballNum, difficulty = 3;
-	static int Difficulty{
+	static int ballNum, difficulty = 3;
+	public static int Difficulty{
 		get{ return difficulty; } set {
 			difficulty = value;	
 			Restart (difficulty);

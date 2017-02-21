@@ -80,6 +80,7 @@
      <Compile Include="Assets\Scripts\Attributes\AuthorAttribute.cs" />
      <Compile Include="Assets\Scripts\Manager\GameManager.cs" />
      <Compile Include="Assets\Scripts\Manager\LoadingScreen.cs" />
+     <Compile Include="Assets\Scripts\Manager\MinigamesTitle.cs" />
      <Compile Include="Assets\Scripts\Manager\SoundManager.cs" />
      <Compile Include="Assets\Scripts\Manager\SwapButtons.cs" />
      <Compile Include="Assets\Scripts\Manager\Title.cs" />
@@ -99,6 +100,7 @@
      <Compile Include="Assets\Scripts\Tools\Instantiator.cs" />
      <Compile Include="Assets\Scripts\Tools\LookAtScript.cs" />
      <Compile Include="Assets\Scripts\Tools\PlayAnimation.cs" />
+     <Compile Include="Assets\Scripts\Tools\RandomBackgroundColour.cs" />
      <Compile Include="Assets\Scripts\Tools\Sound\Delay.cs" />
      <Compile Include="Assets\Scripts\Tools\Sound\PlayTrigger.cs" />
      <Compile Include="Assets\Scripts\Tools\roratelights2.cs" />
