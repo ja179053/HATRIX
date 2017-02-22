@@ -78,6 +78,7 @@
      <Compile Include="Assets\Scripts\Actor\Mechanics\Metamorphosis.cs" />
      <Compile Include="Assets\Scripts\Actor\SimpleCharcterMovement.cs" />
      <Compile Include="Assets\Scripts\Attributes\AuthorAttribute.cs" />
+     <Compile Include="Assets\Scripts\ButtonHover.cs" />
      <Compile Include="Assets\Scripts\Manager\GameManager.cs" />
      <Compile Include="Assets\Scripts\Manager\LoadingScreen.cs" />
      <Compile Include="Assets\Scripts\Manager\MinigamesTitle.cs" />
@@ -124,10 +125,10 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
  <Reference Include="System.Drawing">
- <HintPath>D:/HATRIX/Stealtheon - Copy/Assets/System.Drawing.dll</HintPath>
+ <HintPath>D:/Hatrix/Stealtheon - Copy/Assets/System.Drawing.dll</HintPath>
  </Reference>
  <Reference Include="System.Windows.Forms">
- <HintPath>D:/HATRIX/Stealtheon - Copy/Assets/System.Windows.Forms.dll</HintPath>
+ <HintPath>D:/Hatrix/Stealtheon - Copy/Assets/System.Windows.Forms.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
