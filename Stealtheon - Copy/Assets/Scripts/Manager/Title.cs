@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections;
@@ -12,6 +12,7 @@ public class Title : Singleton<Title>
 		Levels
 		}
 	TitleState ts;
+	static string username;
 	GameObject optionsMenu;
 	protected static int currentLevel = 0;
 	void Start(){
@@ -25,6 +26,7 @@ public class Title : Singleton<Title>
 			}
 		}
 		ManagerSettings ();
+		UserSettings ();
 	}
 	protected static SoundManager sa;
 	protected void ManagerSettings(){
@@ -42,6 +44,16 @@ public class Title : Singleton<Title>
 			Screen.autorotateToLandscapeLeft = true;
 		}
 	}
+	static InputField iField;
+	void UserSettings(){
+		iField = FindObjectOfType<InputField> ();
+		iField.gameObject.SetActive (username == null);
+	}
+	public void AddUserName(){
+		username = iField.textComponent.text;
+		Debug.Log (username);
+		iField.gameObject.SetActive (false);
+	}
 	static Button[] defaultButtons;
 	void Update ()
 	{
@@ -49,8 +61,9 @@ public class Title : Singleton<Title>
 			Quit ();
 		} else if (!Input.GetMouseButton (0)) {
 			if (Input.anyKeyDown) {
-				LoadNewLevel (4);
+			//	LoadNewLevel (4);
 			}
+	//		AddUserName () = iField.onEndEdit;
 		}
 	}
 	public void LoadNewLevel(float waitTime = 0){
