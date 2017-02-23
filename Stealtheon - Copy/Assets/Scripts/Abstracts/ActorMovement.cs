@@ -57,11 +57,11 @@ namespace Actor
 					v = -(Input.GetTouch (0).position.y - (Screen.height / 2)) / Screen.height;
 				}
 			}
-			bool noInput = (h < 0.2f && v < 0.2f) ? true : false;
+			bool noInput = (-0.2f < h && h < 0.2f && -0.2f < v && v < 0.2f) ? true : false;
+		//	Debug.Log (System.String.Format("Input: {0}, Horizontal:{1} Vertical: {2}",!noInput,h,v));
+
 			anim.SetBool ("Input", !noInput);
-			//	Debug.Log (v + " " + h);
 			Vector3 newPos = Vector3.zero;
-			//	if (h > 0.2f || v > 0.2f) {
 			if (canInput) {
 				switch (MovementType) {
 				case 0:
