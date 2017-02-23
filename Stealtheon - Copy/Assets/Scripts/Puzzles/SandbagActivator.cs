@@ -6,5 +6,6 @@ public class SandbagActivator : MonoBehaviour {
 	// Update is called once per frame
 	void OnTriggerEnter () {
 		bc.isTrigger = true;
+		bc.GetComponentInParent<Animation> ().Play ();
 	}
 }

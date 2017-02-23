@@ -57,7 +57,7 @@ namespace Actor
 					v = -(Input.GetTouch (0).position.y - (Screen.height / 2)) / Screen.height;
 				}
 			}
-			bool noInput = (h == 0 && v == 0) ? true : false;
+			bool noInput = (h < 0.2f && v < 0.2f) ? true : false;
 			anim.SetBool ("Input", !noInput);
 			//	Debug.Log (v + " " + h);
 			Vector3 newPos = Vector3.zero;
@@ -104,18 +104,18 @@ namespace Actor
 		public static void Teleport (Vector3 v, bool warp = false)
 		{
 			debug = true;
-			Debug.Log ("teleporting");
+		//	Debug.Log ("teleporting");
 		//	if (warp) {		
 				nma.Warp (v);
 				canInput = true;
-				Debug.Log ("warping");
+		//		Debug.Log ("warping");
 				return;
 		//	}
 			//AI is not running the jump movement
 			if (currentPos != v) {
 				if (nma != null) {	
 					nma.SetDestination (v);
-					Debug.Log ("destination set");
+			//		Debug.Log ("destination set");
 				}
 			} else {
 				canInput = true;

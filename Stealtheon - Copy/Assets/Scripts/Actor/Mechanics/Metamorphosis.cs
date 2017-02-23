@@ -3,6 +3,7 @@ using System.Collections;
 
 namespace Actor
 {
+	[AuthorAttribute("JJ",TeamRole.Programmer)]
 	public class Metamorphosis : Singleton<Metamorphosis>
 	{
 		protected Metamorphosis ()
@@ -15,6 +16,7 @@ namespace Actor
 
 		public float smokeDuration = 2;
 		public string metamorphosisKey = "x";
+//		public AudioClip disappear;
 
 		void Start ()
 		{
@@ -44,6 +46,7 @@ namespace Actor
 			} else {
 				ActorMovement.Teleport (metamorphosis.transform.position, true);
 			}
+			metamorphosis.GetComponent<AudioSource> ().Play();
 		}
 
 		static ParticleSystem ps;

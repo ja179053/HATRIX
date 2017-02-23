@@ -29,6 +29,13 @@ public class SoundManager : Singleton<SoundManager>
 
 	public IEnumerator PauseSound (bool pause)
 	{
+		if (pause) {
+			//	aso.clip = pauseS;
+			aso.PlayOneShot (pauseS);
+		} else {
+			//	aso.clip = unPauseS;
+			aso.PlayOneShot (unPauseS);
+		}
 		yield return new WaitForSeconds (1);
 		foreach (AudioSource a in sounds) {
 			if (a != aso) {
@@ -37,12 +44,6 @@ public class SoundManager : Singleton<SoundManager>
 				} else {
 					a.UnPause ();
 				}
-			}
-			if (pause) {
-			//	aso.clip = pauseS;
-			} else {
-			//	aso.clip = unPauseS;
-				aso.PlayOneShot (unPauseS);
 			}
 		//	aso.Play ();
 		}
