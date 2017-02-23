@@ -39,9 +39,10 @@ public class Title : Singleton<Title>
 	//	Debug.Log ("Working");
 		if (!Actor.ActorMovement.pcMode) {
 			Application.runInBackground = false;
-			Screen.autorotateToPortrait = false;
-			Screen.autorotateToPortraitUpsideDown = false;
+			Screen.autorotateToPortrait = Screen.autorotateToPortraitUpsideDown = false;
 			Screen.autorotateToLandscapeLeft = true;
+			Screen.orientation = ScreenOrientation.Landscape;
+			Screen.sleepTimeout = SleepTimeout.NeverSleep;
 		}
 	}
 	static InputField iField;
