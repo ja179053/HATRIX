@@ -79,6 +79,7 @@
      <Compile Include="Assets\Scripts\Actor\SimpleCharcterMovement.cs" />
      <Compile Include="Assets\Scripts\Attributes\AuthorAttribute.cs" />
      <Compile Include="Assets\Scripts\ButtonHover.cs" />
+     <Compile Include="Assets\Scripts\Extensions\AnimationPingPong.cs" />
      <Compile Include="Assets\Scripts\Manager\GameManager.cs" />
      <Compile Include="Assets\Scripts\Manager\LoadingScreen.cs" />
      <Compile Include="Assets\Scripts\Manager\MinigamesTitle.cs" />

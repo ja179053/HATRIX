@@ -52,21 +52,16 @@ namespace Actor
 
 		public static bool gotKey = false;
 
-		void OnCollisionEnter (Collision c)
-		{
-			if (c.gameObject.tag == "Key") {
-				Destroy (c.gameObject);
-				gotKey = true;
-			} 
-		}
-
 		void CageSwitch ()
 		{
 			if (cages == null) {
-				cages = GameObject.Find ("Cages").transform;
+				try{
+					cages = GameObject.Find ("Cages").transform;
+					Information.conveyorDirection *= -1;
+					cages.position += (Vector3.up * 17);
+				} catch {
+				}
 			}
-			Information.conveyorDirection *= -1;
-			cages.position += (Vector3.up * 17);
 		}
 	}
 

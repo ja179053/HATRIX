@@ -13,6 +13,7 @@ public class LockedRabbit : MonoBehaviour
 	{
 	//	Debug.Log (Other.gameObject.name);
 	//	if (key && Input.GetKey (KeyCode.E)) { 
+		Debug.Log(Other.collider.name + "the lock is " + thelock.activeSelf);
 		if (thelock) {
 			if (key && Other.gameObject.tag == "Player") {
 				this.gameObject.GetComponent<Rigidbody> ().isKinematic = false;
