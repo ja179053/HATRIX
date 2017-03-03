@@ -9,11 +9,11 @@ public class LockedRabbit : MonoBehaviour
 	public static bool key = false;
 	public GameObject goldKey, thelock = null;
 
-	void OnCollisionStay (Collision Other)
+	void OnTriggerStay (Collider Other)
 	{
 	//	Debug.Log (Other.gameObject.name);
-	//	if (key && Input.GetKey (KeyCode.E)) { 
-		Debug.Log(Other.collider.name + "the lock is " + thelock.activeSelf);
+		//	if (key && Input.GetKey (KeyCode.E)) { 
+	//	Debug.Log(Other.collider.name + "the lock is " + thelock.activeSelf);
 		if (thelock) {
 			if (key && Other.gameObject.tag == "Player") {
 				this.gameObject.GetComponent<Rigidbody> ().isKinematic = false;
