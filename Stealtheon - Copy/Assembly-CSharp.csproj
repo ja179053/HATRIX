@@ -88,6 +88,10 @@
      <Compile Include="Assets\Scripts\Manager\Title.cs" />
      <Compile Include="Assets\Scripts\Minigames\Cups\Cup.cs" />
      <Compile Include="Assets\Scripts\Minigames\Cups\CupsGame.cs" />
+     <Compile Include="Assets\Scripts\Minigames\MinigameEnder.cs" />
+     <Compile Include="Assets\Scripts\Minigames\MinigameHead.cs" />
+     <Compile Include="Assets\Scripts\Minigames\Reaction\ReactManager.cs" />
+     <Compile Include="Assets\Scripts\Minigames\Score.cs" />
      <Compile Include="Assets\Scripts\Puzzles\BronzeKey.cs" />
      <Compile Include="Assets\Scripts\Puzzles\Key.cs" />
      <Compile Include="Assets\Scripts\Puzzles\LockedRabbit.cs" />

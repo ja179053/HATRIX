@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CupsGame : Singleton<CupsGame> {
+public class CupsGame : MinigameHead {
 	public static Cup[] cups;
 	static int ballNum, difficulty = 3;
 	public static int Difficulty{
@@ -53,9 +53,11 @@ public class CupsGame : Singleton<CupsGame> {
 	public static void DecideWin(Cup cup){
 		if (cups [ballNum] == cup) {
 			Debug.Log ("You win");
+			score += 50;
 			Difficulty++;
 		} else {
 			Debug.Log ("You lose");
+			score -= 50;
 			Difficulty--;
 		}
 	}

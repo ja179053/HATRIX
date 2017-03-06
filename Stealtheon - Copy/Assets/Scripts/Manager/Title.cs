@@ -70,6 +70,12 @@ public class Title : Singleton<Title>
 	public void LoadNewLevel(float waitTime = 0){
 		StartCoroutine (NewLevel (waitTime, -1));
 	}
+	public void RestartLevel(){
+		StartCoroutine (NewLevel (0, SceneManager.GetActiveScene().buildIndex));
+	}
+	public void ExitToMenu(){
+		StartCoroutine (NewLevel ());
+	}
 	int lastLevel;
 	public void Continue(){
 		StartCoroutine(NewLevel(4, lastLevel));
