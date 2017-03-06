@@ -47,8 +47,11 @@ public class Title : Singleton<Title>
 	}
 	static InputField iField;
 	void UserSettings(){
+		try{
 		iField = FindObjectOfType<InputField> ();
 		iField.gameObject.SetActive (username == null);
+		} catch {
+		}
 	}
 	public void AddUserName(){
 		username = iField.textComponent.text;
